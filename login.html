@@ -1,84 +1,74 @@
-{% extends "page.html" %}
-{% if announcement_login %}
-  {% set announcement = announcement_login %}
-{% endif %}
-
-{% block login_widget %}
-{% endblock %}
-
-{% block main %}
-
+{% extends "templates/login.html" %}
 {% block login %}
-<div id="login-main" class="container">
-{% if custom_html %}
-{{ custom_html | safe }}
-{% elif login_service %}
-<div class="service-login">
-  <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
-    PLEASE Sign in with {{login_service}}
-  </a>
+<div class='container branding'>
+<img
+src='https://snri.ucmerced.edu/sites/snri.ucmerced.edu/files/images/170206_ucmercedlogo_seal.png'>
 </div>
-{% else %}
-<form action="{{login_url}}?next={{next}}" method="post" role="form">
-  <div class="auth-form-header">
-    Sign in
-  </div>
-  <div class='auth-form-body'>
 
-    <p id='insecure-login-warning' class='hidden'>
-    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-    We strongly recommend enabling HTTPS for JupyterHub.
-    </p>
 
-    {% if login_error %}
-    <p class="login_error">
-      {{login_error}}
-    </p>
-    {% endif %}
-    <label for="username_input">Username:</label>
-    <input
-      id="username_input"
-      type="text"
-      autocapitalize="off"
-      autocorrect="off"
-      class="form-control"
-      name="username"
-      val="{{username}}"
-      tabindex="1"
-      autofocus="autofocus"
-    />
-    <label for='password_input'>Password:</label>
-    <input
-      type="password"
-      class="form-control"
-      name="password"
-      id="password_input"
-      tabindex="2"
-    />
+{{ super() }}
 
-    <input
-      type="submit"
-      id="login_submit"
-      class='btn btn-jupyter'
-      value='Sign In'
-      tabindex="3"
-    />
-  </div>
-</form>
-{% endif %}
-</div>
-{% endblock login %}
+<footer class='navbar-default'>
+    <p>Access to the Merced Cluster via Juyter is currently in Beta, you can
+    request an account by open a ticket with the Research It team | MERCED is supported by the National Science Foundation (Grant No. ACI-1429783).</p>
+</footer>
 
 {% endblock %}
 
-{% block script %}
+{% block stylesheet %}
 {{ super() }}
-<script>
-if (window.location.protocol === "http:") {
-  // unhide http warning
-  var warning = document.getElementById('insecure-login-warning');
-  warning.className = warning.className.replace(/\bhidden\b/, '');
+<style>
+.branding img {
+    display: block; 
+    width: 350px;
+    /* top right bottom left */
+    margin: 0 auto 0 auto;
 }
-</script>
-
+#login-main .auth-form-body {
+    border-color: rgb(0, 124, 186);
+    color: white;
+}
+#login-main {
+    margin-top: 1%;
+    height: 100%;
+}
+footer {
+    border-top: 1px solid silver;
+    padding: 10px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+footer p{
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+#login-main form {
+    vertical-align: top;
+}
+#login-main .auth-form-header {
+    color: white;
+    background: rgb(219, 170, 0);
+    border: 1px solid;
+    border-color: rgb(0, 124, 186);
+}
+#insecure-login-warning {
+    color: black;
+}
+.btn-jupyter.active, .btn-jupyter:active, .open>.dropdown-toggle.btn-jupyter {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #a88400;
+    border-color: #a88400;
+    outline-color: #a88400;
+}
+#login-main .form-control:focus, #login-main input[type=submit]:focus {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(219, 170, 0);
+    border-color: rgb(219, 170, 0);
+    outline-color: rgb(219, 170, 0);
+}
+.btn-jupyter {
+    color: #fff;
+    background-color: rgb(219, 170, 0);
+    border-color: rgb(219, 170, 0);
+}
+</style>
 {% endblock %}
