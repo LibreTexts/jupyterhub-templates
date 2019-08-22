@@ -11,7 +11,7 @@
 
 {% block login %}
 
-<div class="container col-sm-4">
+<div class="card col-sm-4">
     <h3>Welcome to JupyterHub!</h3>
     {{ super() }}
     <p>Need an account? Email EMAIL</p>
@@ -19,6 +19,7 @@
 
 
 {% endblock login %}
+<div class="container body card">
 <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
 
 <h2 id="requestanaccount">Request an account</h2>
@@ -86,7 +87,7 @@
 <p>If you have an technical issue, please first open one
     <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues, please contact
     <email>.</p>
-
+</div>
 
 <footer class='navbar-default'>
     <p>UC Davis and LibreTexts JupyterHub is supported by the UC Davis Genome Center Bioinformatics Core and Grant [put grant
@@ -96,6 +97,9 @@
 {% block stylesheet %} 
 {{ super() }}
 <style>
+    .body {
+        padding-bottom: 50px;
+    }
     .branding img {
         display: block;
         width: 350px;
