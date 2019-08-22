@@ -1,20 +1,25 @@
 {% extends "templates/login.html" %}
 {% block main %}
 
-<div class="container .col-md-">
+<div class="container col-sm-8">
     <div class='container branding'>
         <img src='https://genomecenter.ucdavis.edu/wp-content/themes/gc_core/images/footer/ucdavis_logo_blue.png'>
     </div>
 
 {% block login %}
-{{ super() }}
 
-<footer class='navbar-default'>
-<p>UC Davis and LibreTexts JupyterHub is supported by the UC Davis Genome Center Bioinformatics Core and Grant [put grant here]</p>
-</footer>
+<div class="container col-sm-4">
+<h3>Welcome to JupyterHub</h3>
+{{ super() }}
+</div>
+
 
 {% endblock login %}
 </div>
+
+<footer class='navbar-default'>
+    <p>UC Davis and LibreTexts JupyterHub is supported by the UC Davis Genome Center Bioinformatics Core and Grant [put grant here]</p>
+</footer>
 {% endblock main %}
 
 {% block stylesheet %}
