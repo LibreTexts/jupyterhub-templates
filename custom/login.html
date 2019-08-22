@@ -6,75 +6,7 @@
     <div class='container branding'>
         <img src="/etc/jupyterhub/custom/custom/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo">
     </div>
-    
-        <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
 
-        <h2 id="requestanaccount">Request an account</h2>
-
-        <p>If you are a LibreTexts or UC Davis student, please request an account by sending your Google OAuth enabled email
-            to
-            <email>. Your email address must have a Google Account that can be used with Google OAuth, like
-                <code>@gmail.com</code> or
-                <code>@ucdavis.edu</code>.</p>
-
-        <h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
-
-        <p>
-            <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
-            </p>
-
-        <p>Some resources to learn Jupyter:</p>
-
-        <ul>
-            <li>
-                <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages</li>
-
-            <li>
-                <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a>
-                of how to navigate the Jupyter Notebook.</li>
-
-            <li>Visit the
-                <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a>
-                for more information on navigating the interface.</li>
-        </ul>
-
-        <h2 id="settingupcustomcondaenvironments">Setting up custom conda environments</h2>
-
-        <p>Please visit
-            <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
-            for information on creating custom conda environments.</p>
-
-        <h2 id="settingupcustomenvironmentsforaclass">Setting up custom environments for a class</h2>
-
-        <p>If you are a teacher who wants to set up an environment with custom packages and kernels, please create one of the
-            following and email it to
-            <email>:</p>
-
-        <ol>
-            <li>One or more configuration files supported by
-                <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
-                <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
-
-            <li>A
-                <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
-                <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
-                that is already available to the community.</li>
-        </ol>
-
-        <p>For an example of packages that could be included, please look at the
-            <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks">Jupyter Core Stacks</a>.</p>
-
-        <h2 id="ihaveanissue">I have an issue!</h2>
-
-        <p>Please
-            <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a> on GitHub. You will need to create a GitHub account if you do not have one.</p>
-
-        <h2 id="contact">Contact</h2>
-
-        <p>If you have an technical issue, please first open one
-            <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues, please contact
-            <email>.</p>
-    
 </div>
 
 {% block login %}
@@ -87,6 +19,73 @@
 
 
 {% endblock login %}
+<p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
+
+<h2 id="requestanaccount">Request an account</h2>
+
+<p>If you are a LibreTexts or UC Davis student, please request an account by sending your Google OAuth enabled email
+    to
+    <email>. Your email address must have a Google Account that can be used with Google OAuth, like
+        <code>@gmail.com</code> or
+        <code>@ucdavis.edu</code>.</p>
+
+<h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
+
+<p>
+    <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
+    </p>
+
+<p>Some resources to learn Jupyter:</p>
+
+<ul>
+    <li>
+        <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages</li>
+
+    <li>
+        <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a>
+        of how to navigate the Jupyter Notebook.</li>
+
+    <li>Visit the
+        <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a>
+        for more information on navigating the interface.</li>
+</ul>
+
+<h2 id="settingupcustomcondaenvironments">Setting up custom conda environments</h2>
+
+<p>Please visit
+    <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
+    for information on creating custom conda environments.</p>
+
+<h2 id="settingupcustomenvironmentsforaclass">Setting up custom environments for a class</h2>
+
+<p>If you are a teacher who wants to set up an environment with custom packages and kernels, please create one of the
+    following and email it to
+    <email>:</p>
+
+<ol>
+    <li>One or more configuration files supported by
+        <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
+        <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
+
+    <li>A
+        <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
+        <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
+        that is already available to the community.</li>
+</ol>
+
+<p>For an example of packages that could be included, please look at the
+    <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks">Jupyter Core Stacks</a>.</p>
+
+<h2 id="ihaveanissue">I have an issue!</h2>
+
+<p>Please
+    <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a> on GitHub. You will need to create a GitHub account if you do not have one.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>If you have an technical issue, please first open one
+    <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues, please contact
+    <email>.</p>
 
 
 <footer class='navbar-default'>
