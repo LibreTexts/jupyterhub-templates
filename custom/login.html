@@ -17,18 +17,18 @@
     {{ super() }}
     <p>
         <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please
-        <a href="mailto:jupytersupport@libretexts.org">send us</a>
-        an email address with a Google Account.</p>
+        request an account by <a href="mailto:jupytersupport@libretexts.org">sending us</a>
+        a Google Account enabled email.</p>
     <p>
         <strong>Have an issue?</strong> Please
         <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
         on our
-        <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a>. with a GitHub account.</p>
+        <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
 </div>
 
 
 {% endblock login %}
-<div class="container col-sm-8">
+<div class="container col-sm-7">
     <div class="card">
 
         <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
@@ -90,7 +90,7 @@
 </div>
 
 <footer class='navbar-default'>
-    <p>UC Davis and LibreTexts JupyterHub is supported by the UC Davis Genome Center Bioinformatics Core and Grant [put grant
+    <p>The LibreTexts-UC Davis JupyterHub is supported by the UC Davis Genome Center Bioinformatics Core and Grant [put grant
         here]
     </p>
     <div class="row sponsors-footer">
@@ -101,10 +101,10 @@
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
     .sponsors-footer {
-        height: 100px;
+        height: 300px;
     }
     .sponsor {
-        height: 40px;
+        height: 50px;
     }
 
     #login-box {
@@ -135,7 +135,8 @@
     #login-main {
         margin-top: 1%;
         height: 100%;
-        width: inherit;
+        width: inherit; 
+        margin-bottom: 5%;
     }
 
     #login-main .container {
