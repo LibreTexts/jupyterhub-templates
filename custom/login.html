@@ -1,10 +1,10 @@
 {% extends "templates/login.html" %} {% block main %}
 
-<div class="container col-sm-7">
-    <div class="branding">
+<div class="container col-sm-7 branding">
+    <div class="logo">
         <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" height="150px">
     </div>
-    <div class='branding'>
+    <div class="logo">
         <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" height="60px">
     </div>
 
@@ -13,7 +13,8 @@
 {% block login %}
 
 <div class="card col-sm-4" id="login-box">
-    <h3>Login to JupyterHub</h3>
+    <h3 align="center">Welcome to JupyterHub!</h3>
+    <br>
     {{ super() }}
     <p>
         <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please
@@ -100,6 +101,16 @@
 </footer>
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    .branding {
+        display: flex;
+        flex-direction: row;
+    }
+@media all and (max-width: 500px) {
+  .branding {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
     .sponsors-footer {
         height: 300px;
     }
@@ -133,7 +144,7 @@
     }
 
     #login-main {
-        margin-top: 1%;
+        margin-top: 5%;
         height: 100%;
         width: inherit; 
         margin-bottom: 5%;
@@ -141,6 +152,7 @@
 
     #login-main .container {
         width: 50%;
+        margin-top: 
     }
 
     footer {
