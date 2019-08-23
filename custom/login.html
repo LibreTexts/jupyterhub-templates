@@ -1,5 +1,5 @@
 {% extends "templates/login.html" %} {% block main %}
-
+<div class="main">
 <div class="container col-sm-7 branding">
     <div class="logo">
         <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" height="150px">
@@ -27,7 +27,7 @@
         <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
 </div>
 
-
+</div>
 {% endblock login %}
 <div class="container col-sm-7">
     <div class="card">
@@ -101,13 +101,22 @@
 </footer>
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    .main {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 2;
+    }
     .branding {
         display: flex;
         flex-direction: row;
+
     }
 @media all and (max-width: 500px) {
   .branding {
     /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+  .main {
     flex-direction: column;
   }
 }
