@@ -1,29 +1,30 @@
 {% extends "templates/login.html" %} {% block main %}
 <div class="main">
-   <!-- <div class="container branding"> -->
-        <div class="brand">
-            <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" max-height="150px">
-        </div>
-        <div class="brand">
-            <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" max-height="60px">
-        </div>
-  <!--  </div> -->
-
-    {% block login %}
-
-    <div class="card col-sm-4" id="login-box">
-        <h3 align="center">Welcome to JupyterHub!</h3>
-        <br> {{ super() }}
-        <p>
-            <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
-            <a href="mailto:jupytersupport@libretexts.org">sending us</a>
-            a Google Account enabled email.</p>
-        <p>
-            <strong>Have an issue?</strong> Please
-            <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
-            on our
-            <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+<div class="container branding">
+    <div class="brand">
+        <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" max-height="150px">
     </div>
+    <div class="brand">
+        <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" max-height="60px">
+    </div>
+</div>
+
+{% block login %}
+
+<div class="card col-sm-4" id="login-box">
+    <h3 align="center">Welcome to JupyterHub!</h3>
+    <br>
+    {{ super() }}
+    <p>
+        <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please
+        request an account by <a href="mailto:jupytersupport@libretexts.org">sending us</a>
+        a Google Account enabled email.</p>
+    <p>
+        <strong>Have an issue?</strong> Please
+        <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
+        on our
+        <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+</div>
 
 </div>
 {% endblock login %}
@@ -82,9 +83,9 @@
         <h2 id="contact">Contact</h2>
 
         <p>If you have an technical issue, please first open one
-            <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues,
-            <a href="mailto:jupytersupport@libretexts.org">
-                send us an email.</a>.</p>
+            <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on 
+            GitHub. For other issues, <a href="mailto:jupytersupport@libretexts.org"> 
+            send us an email.</a>.</p>
     </div>
 </div>
 
@@ -93,41 +94,46 @@
         here]
     </p>
     <div class="row sponsors-footer">
-        <a class="sponsor" href="https://bioinformatics.ucdavis.edu/">
-            <img src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core Logo">
-        </a>
-        <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
-            <img src="/hub/static/external/images/DOESeal.svg" </a>
+        <a class="sponsor" href="https://bioinformatics.ucdavis.edu/"><img src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core Logo"></a>
+        <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"><img src="/hub/static/external/images/DOESeal.svg"</a>
     </div>
 </footer>
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
-    .brand {
-        flex-shrink: 2;
-    }
     .main {
         display: flex;
         flex-direction: row;
-        align-items: baseline;
+        flex-grow: 2;
     }
-    @media all and (max-width: 500px) {
-        .branding {
-            /* On small screens, we are no longer using row direction but column */
-            flex-direction: column;
-            align-items: baseline;
-        }
-        .main {
-            flex-direction: column;
-        }
-        .branding img {
-            max-width: 50%;
-        }
-    }
+    .branding {
+        display: flex;
+        flex-direction: row;
 
+    }
+    .branding img {
+        display: block;
+        /* top right bottom left */
+        margin: 0 auto 0 auto;
+    }
+    .brand {
+        flex: 0 1 auto;
+    }
+@media all and (max-width: 500px) {
+  .branding {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .branding img {
+    max-width: 50%;
+  }
+}
     .sponsors-footer {
         height: 300px;
     }
-
     .sponsor {
         height: 50px;
     }
@@ -140,9 +146,8 @@
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         border-radius: 5px;
-        flex-grow: 2;
     }
-
+    
     .body {
         padding-bottom: 50px;
     }
@@ -155,13 +160,13 @@
     #login-main {
         margin-top: 5%;
         height: inherit;
-        width: inherit;
+        width: inherit; 
         margin-bottom: 5%;
     }
 
     #login-main .container {
         width: 50%;
-        margin-top:
+        margin-top: 
     }
 
     footer {
