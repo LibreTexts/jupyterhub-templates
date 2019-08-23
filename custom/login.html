@@ -1,13 +1,12 @@
 {% extends "templates/login.html" %} {% block main %}
 <div class="main">
-<div class="container col-sm-7 branding">
-    <div class="logo">
-        <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" height="150px">
+<div class="container branding">
+    <div class="brand img-responsive">
+        <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" max-height="150px">
     </div>
-    <div class="logo">
-        <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" height="60px">
+    <div class="brand img-responsive">
+        <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" max-height="60px">
     </div>
-
 </div>
 
 {% block login %}
@@ -111,6 +110,9 @@
         flex-direction: row;
 
     }
+    .brand {
+        flex: 0 1 auto;
+    }
 @media all and (max-width: 500px) {
   .branding {
     /* On small screens, we are no longer using row direction but column */
@@ -155,7 +157,7 @@
 
     #login-main {
         margin-top: 5%;
-        height: 100%;
+        height: inherit;
         width: inherit; 
         margin-bottom: 5%;
     }
