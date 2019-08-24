@@ -10,38 +10,37 @@
                     padding="10px">
             </div>
         </div>
-        <div>
+        <div class="card">
+            Supported by:
             <div class="card">
-                Supported by:
-                <div class="card">
-                    <a href="https://bioinformatics.ucdavis.edu/">
-                        <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
-                    </a>
-                </div>
-                <div class="card">
-                    <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
-                        <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
-                    </a>
-                </div>
+                <a href="https://bioinformatics.ucdavis.edu/">
+                    <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
+                </a>
+            </div>
+            <div class="card">
+                <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
+                    <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    {% block login %}
+{% block login %}
 
-    <div class="card col-sm-4" id="login-box">
-        <h3 align="center">Welcome to JupyterHub!</h3>
-        {{ super() }}
-        <p>
-            <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
-            <a href="mailto:jupytersupport@libretexts.org">sending us</a>
-            a Google Account enabled email.</p>
-        <p>
-            <strong>Have an issue?</strong> Please
-            <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
-            on our
-            <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
-    </div>
+<div class="card col-sm-4" id="login-box">
+    <h3 align="center">Welcome to JupyterHub!</h3>
+    {{ super() }}
+    <p>
+        <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
+        <a href="mailto:jupytersupport@libretexts.org">sending us</a>
+        a Google Account enabled email.</p>
+    <p>
+        <strong>Have an issue?</strong> Please
+        <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
+        on our
+        <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+</div>
 
 </div>
 {% endblock login %}
