@@ -27,20 +27,22 @@
 </div>
 
 {% block login %}
-
-<div class="card col-sm-4" id="login-box">
-    <h3 align="center">Welcome to JupyterHub!</h3>
-    {{ super() }}
-    <p>
-        <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
-        <a href="mailto:jupytersupport@libretexts.org">sending us</a>
-        a Google Account enabled email.</p>
-    <p>
-        <strong>Have an issue?</strong> Please
-        <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
-        on our
-        <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+<div class="col-sm-4">
+    <div class="card" id="login-box">
+        <h3 align="center">Welcome to JupyterHub!</h3>
+        {{ super() }}
+        <p>
+            <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
+            <a href="mailto:jupytersupport@libretexts.org">sending us</a>
+            a Google Account enabled email.</p>
+        <p>
+            <strong>Have an issue?</strong> Please
+            <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
+            on our
+            <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+    </div>
 </div>
+
 
 </div>
 {% endblock login %}
@@ -120,6 +122,11 @@
 </footer>
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     #libretexts {
         max-height: 150px;
     }
@@ -159,7 +166,7 @@
     }
 
     .sponsor {
-        height: 50px;
+        height: 75px;
         padding: 10px;
     }
 
