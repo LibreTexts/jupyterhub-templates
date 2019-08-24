@@ -14,7 +14,7 @@
 </div>
 
 {% block login %}
-<div class="col-sm-4">
+<div class="col-sm-4 left-col">
     <div class="card" id="login-box">
         <h3 align="center">Login to JupyterHub</h3>
         {{ super() }}
@@ -120,7 +120,9 @@
 </footer> -->
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
-    .logos {}
+    .left-col {
+        margin: 30px;
+    }
 
     #libretexts {
         max-height: 150px;
