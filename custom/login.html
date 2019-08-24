@@ -30,16 +30,12 @@
     </div>
     <p>Supported by:</p>
     <div class="row align-items-center justify-content-around flex-wrap">
-        <div class="card">
-            <a href="https://bioinformatics.ucdavis.edu/">
-                <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
-            </a>
-        </div>
-        <div class="card">
-            <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
-                <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
-            </a>
-        </div>
+        <a href="https://bioinformatics.ucdavis.edu/">
+            <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
+        </a>
+        <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
+            <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
+        </a>
     </div>
 </div>
 
@@ -48,7 +44,7 @@
 {% endblock login %}
 <div class="container col-sm-7">
     <div class="card">
-        
+
         <h1>Welcome to JupyterHub!</h1>
 
         <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
@@ -124,8 +120,7 @@
 </footer> -->
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
-    .logos {
-    }
+    .logos {}
 
     #libretexts {
         max-height: 150px;
