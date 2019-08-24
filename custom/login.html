@@ -2,13 +2,13 @@
 <div class="main">
     <div class="container branding">
         <div class="logos">
-            <div class="brand" id="libretexts">
+        <!--    <div class="brand" id="libretexts"> -->
                 <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" height="120px">
-            </div>
-            <div class="brand" id="ucdavis">
+        <!--    </div> -->
+        <!--    <div class="brand" id="ucdavis"> -->
                 <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" height="60px"
                     padding="10px">
-            </div>
+        <!--    </div> -->
         </div>
     </div>
 </div>
@@ -28,12 +28,14 @@
             on our
             <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
     </div>
-    <p>Supported by:</p>
+    <p>Equipment and support provided by the <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>.
+        Funded by the Open Textbooks Pilot Program from the U.S. Department of Education.
+    </p>
     <div class="sponsors row align-items-center justify-content-around flex-wrap">
-        <a href="https://bioinformatics.ucdavis.edu/">
+        <a href="https://bioinformatics.ucdavis.edu/" target="_blank">
             <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
         </a>
-        <a class="sponsor" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program">
+        <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program" target="_blank">
             <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
         </a>
     </div>
@@ -122,6 +124,10 @@
 </footer> -->
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    .logos {
+        display: flex;
+
+    }
     .left-col {
         margin: 30px;
     }
