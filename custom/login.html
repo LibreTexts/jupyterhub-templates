@@ -1,11 +1,11 @@
 {% extends "templates/login.html" %} {% block main %}
 <div class="main">
    <!-- <div class="container branding"> -->
-        <div class="brand">
-            <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" max-height="150px">
+        <div class="brand" id="libretexts">
+            <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts Logo" height="120px">
         </div>
-        <div class="brand">
-            <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" max-height="60px">
+        <div class="brand" id="ucdavis">
+            <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Standard/PNG/ucdavis_logo_gold.png" alt="UC Davis logo" height="60px" padding="10px">
         </div>
   <!--  </div> -->
 
@@ -13,7 +13,7 @@
 
     <div class="card col-sm-4" id="login-box">
         <h3 align="center">Welcome to JupyterHub!</h3>
-        <br> {{ super() }}
+        {{ super() }}
         <p>
             <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
             <a href="mailto:jupytersupport@libretexts.org">sending us</a>
@@ -102,6 +102,13 @@
 </footer>
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    #libretexts {
+        max-height: 150px;
+    }
+    #ucdavis {
+        max-height: 60px;
+        padding: 10px;
+    }
     .brand {
         flex-shrink: 2;
     }
@@ -118,6 +125,7 @@
         }
         .main {
             flex-direction: column;
+            justify-content: center;
         }
         .branding img {
             max-width: 50%;
@@ -135,7 +143,7 @@
     #login-box {
         border: 1px solid silver;
         padding: 10px;
-        margin: 10px;
+        margin: 30px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
