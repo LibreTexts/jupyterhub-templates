@@ -29,7 +29,7 @@
             <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
     </div>
     <p>Supported by:</p>
-    <div class="row align-items-center justify-content-around flex-wrap">
+    <div class="sponsors row align-items-center justify-content-around flex-wrap">
         <a href="https://bioinformatics.ucdavis.edu/">
             <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core">
         </a>
@@ -102,6 +102,8 @@
             <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues,
             <a href="mailto:jupytersupport@libretexts.org">
                 send us an email.</a>.</p>
+
+        <br>
     </div>
 </div>
 <!--
@@ -157,20 +159,25 @@
             justify-content: center;
         }
     }
+    .sponsors {
+        display: flex;
+        flex-direction: row;
+    }
 
     .sponsors-footer {
         height: 300px;
     }
 
     .sponsor {
-        height: 100px;
+        height: 120px;
         padding: 10px;
+        max-width: 100%;
     }
 
     #login-box {
         border: 1px solid silver;
         padding: 10px;
-        margin: 30px;
+        margin-bottom: 30px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
