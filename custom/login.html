@@ -157,6 +157,7 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        margin: auto 20px;
     }
 
     @media all and (max-width: 500px) {
@@ -164,6 +165,7 @@
             /* On small screens, we are no longer using row direction but column */
             flex-direction: column;
             align-items: baseline;
+            justify-content: center;
         }
         .main {
             flex-direction: column;
@@ -171,6 +173,7 @@
         }
         .branding img {
             justify-content: center;
+            max-width: 100%;
         }
     }
 
@@ -194,9 +197,9 @@
         border: 1px solid silver;
         padding: 10px;
         margin-bottom: 30px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     /*   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         border-radius: 5px;
         flex-grow: 2;
     }
