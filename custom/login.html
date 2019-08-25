@@ -26,10 +26,11 @@
             on our
             <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
     </div>
-    <p>Equipment and support provided by the
-        <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>. Funded by the
-        <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-            target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)
+    <p>
+        <small>Equipment and support provided by the
+            <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>. Funded by the
+            <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+                target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)</small>
         </a>
         from the U.S. Department of Education.
     </p>
@@ -176,7 +177,11 @@
             max-width: 100%;
         }
     }
-
+    @media (max-width: 800px) {
+        .logos {
+            justify-content: space-between;
+        }
+    }
     .sponsors {
         display: flex;
         flex-direction: row;
