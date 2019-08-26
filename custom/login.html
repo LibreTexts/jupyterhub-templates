@@ -1,116 +1,118 @@
 {% extends "templates/login.html" %} {% block main %}
-<div class="branding">
-    <div class="logos">
-        <a href="https://libretexts.org" target="_blank">
-            <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" style="max-height:150px;max-width:100%;">
-        </a>
-        <a href="https://ucdavis.edu" target="_blank">
-            <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" style="max-height:60px;max-width:100%;margin:auto 30px;">
-        </a>
-    </div>
-</div>
 
-{% block login %}
-<div class="col-sm-4 left-col">
-    <div class="card" id="login-box">
-        <h3 align="center">Login to JupyterHub</h3>
-        {{ super() }}
-        <p>
-            <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
-            <a href="mailto:jupytersupport@libretexts.org">sending us</a>
-            any email address linked to a Google Account.</p>
-        <p>
-            <strong>Have an issue?</strong> Please
-            <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
-            on our
-            <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+<div class="main-content">
+    <div class="branding">
+        <div class="logos">
+            <a href="https://libretexts.org" target="_blank">
+                <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" style="max-height:150px;max-width:100%;">
+            </a>
+            <a href="https://ucdavis.edu" target="_blank">
+                <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" style="max-height:60px;max-width:100%;margin:auto 30px;">
+            </a>
+        </div>
     </div>
-    <p>
-        <small>Equipment and support provided by the
-            <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>. Funded by the
+
+    {% block login %}
+    <div class="col-sm-4 left-col">
+        <div class="card" id="login-box">
+            <h3 align="center">Login to JupyterHub</h3>
+            {{ super() }}
+            <p>
+                <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
+                <a href="mailto:jupytersupport@libretexts.org">sending us</a>
+                any email address linked to a Google Account.</p>
+            <p>
+                <strong>Have an issue?</strong> Please
+                <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
+                on our
+                <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
+        </div>
+        <p>
+            <small>Equipment and support provided by the
+                <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>. Funded by the
+                <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+                    target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)</small>
+            </a>
+            from the U.S. Department of Education.</small>
+        </p>
+        <div class="sponsors row align-items-center justify-content-around flex-wrap">
+            <a href="https://bioinformatics.ucdavis.edu/" target="_blank">
+                <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
+                    padding="0px">
+            </a>
             <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-                target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)</small>
-        </a>
-        from the U.S. Department of Education.
-    </p>
-    <div class="sponsors row align-items-center justify-content-around flex-wrap">
-        <a href="https://bioinformatics.ucdavis.edu/" target="_blank">
-            <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
-                padding="0px">
-        </a>
-        <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-            target="_blank">
-            <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
-        </a>
+                target="_blank">
+                <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
+            </a>
+        </div>
     </div>
-</div>
 
 
-</div>
-{% endblock login %}
-<div class="container col-sm-7">
-    <div class="card">
+    {% endblock login %}
+    <div class="container col-sm-7">
+        <div class="card">
 
-        <h1>Welcome to JupyterHub!</h1>
+            <h1>Welcome to JupyterHub!</h1>
 
-        <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
+            <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
 
-        <h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
+            <h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
 
-        <p>
-            <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
-        </p>
+            <p>
+                <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
+            </p>
 
-        <p>Some resources to learn Jupyter:</p>
+            <p>Some resources to learn Jupyter:</p>
 
-        <ul>
-            <li>
-                <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages</li>
+            <ul>
+                <li>
+                    <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages</li>
 
-            <li>
-                <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a>
-                of how to navigate the Jupyter Notebook.</li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a>
+                    of how to navigate the Jupyter Notebook.</li>
 
-            <li>Visit the
-                <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a>
-                for more information on navigating the interface.</li>
-        </ul>
-        <h2>Customizing JupyterHub</h2>
-        <h3 id="settingupcustomcondaenvironments">Can I create custom conda environments?</h3>
+                <li>Visit the
+                    <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a>
+                    for more information on navigating the interface.</li>
+            </ul>
+            <h2>Customizing JupyterHub</h2>
+            <h3 id="settingupcustomcondaenvironments">Can I create custom conda environments?</h3>
 
-        <p>Please visit
-            <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
-            for information on creating custom conda environments.</p>
+            <p>Please visit
+                <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
+                for information on creating custom conda environments.</p>
 
-        <h3 id="settingupcustomenvironmentsforaclass">How do I set up custom environments for my class?</h3>
+            <h3 id="settingupcustomenvironmentsforaclass">How do I set up custom environments for my class?</h3>
 
-        <p>If you are a teacher who wants to set up an environment with custom packages and kernels, please create one of the
-            following and email it to
-            <email>:</p>
+            <p>If you are a teacher who wants to set up an environment with custom packages and kernels, please create one of
+                the following and email it to
+                <email>:</p>
 
-        <ol>
-            <li>One or more configuration files supported by
-                <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
-                <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
+            <ol>
+                <li>One or more configuration files supported by
+                    <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
+                    <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
 
-            <li>A
-                <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
-                <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
-                that is already available to the community.</li>
-        </ol>
+                <li>A
+                    <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
+                    <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
+                    that is already available to the community.</li>
+            </ol>
 
-        <p>For an example of packages that could be included, please look at the
-            <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks">Jupyter Core Stacks</a>.</p>
+            <p>For an example of packages that could be included, please look at the
+                <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks">Jupyter Core Stacks</a>.</p>
 
-        <h2 id="contact">Contact</h2>
+            <h2 id="contact">Contact</h2>
 
-        <p>If you have an technical issue, please first open one
-            <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues,
-            <a href="mailto:jupytersupport@libretexts.org">
-                send us an email.</a>
-        </p>
+            <p>If you have an technical issue, please first open one
+                <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues,
+                <a href="mailto:jupytersupport@libretexts.org">
+                    send us an email.</a>
+            </p>
 
-        <br>
+            <br>
+        </div>
     </div>
 </div>
 <!--
@@ -129,6 +131,9 @@
 </footer> -->
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
+    .main-content {
+        margin: 30px;
+    }
     .logos {
         display: flex;
         align-items: center;
@@ -137,7 +142,7 @@
     }
 
     .left-col {
-        margin: 30px;
+        margin-top: 20px;
     }
 
     #libretexts {
@@ -153,12 +158,12 @@
         flex-shrink: 2;
     }
 
-    .main {
+    /*  .main {
         display: flex;
         flex-direction: row;
         align-items: baseline;
         margin: auto 20px;
-    }
+    } */
 
     @media all and (max-width: 500px) {
         .logos {
@@ -167,10 +172,11 @@
             align-items: center;
             justify-content: center;
         }
+        /*
         .main {
             flex-direction: column;
             justify-content: center;
-        }
+        } */
         .branding img {
             justify-content: center;
             max-width: 100%;
@@ -228,7 +234,6 @@
 
     #login-main .container {
         width: 50%;
-        margin-top:
     }
 
     footer {
