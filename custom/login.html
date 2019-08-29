@@ -18,9 +18,13 @@
             <h3 align="center">Login to JupyterHub</h3>
             {{ super() }}
             <p>
-                <strong>Need an account?</strong> If you are a LibreTexts or UC Davis student, please request an account by
-                <a href="mailto:jupyterteam@ucdavis.edu">sending us</a>
-                any email address linked to a Google Account.</p>
+              <strong>Need an account?</strong> If you are a LibreTexts
+              instructor or UC Davis affiliate, you can request an account by
+              <a href="mailto:jupyterteam@ucdavis.edu">sending us</a> an email
+              from a Google Authentication connected email address. LibreTexts
+              affiliated student accounts should be requested by their
+              instructors.
+            </p>
             <p>
                 <strong>Have an issue?</strong> Please
                 <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
@@ -28,13 +32,12 @@
                 <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
         </div>
         <p>
+          Funded by the <a
+            href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+            target="_blank"> Open Textbooks Pilot Program (CFDA No.
+            84.116T)</small> </a> from the U.S. Department of Education.</small>
             <small>Equipment and support provided by the
-                <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>. Funded by the
-                <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-                    target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)</small>
-            </a>
-            from the U.S. Department of Education.</small>
-        </p>
+                <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>.        </p>
         <div class="sponsors row align-items-center justify-content-around flex-wrap">
             <a href="https://bioinformatics.ucdavis.edu/" target="_blank">
                 <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
@@ -52,7 +55,7 @@
     <div class="container col-sm-7">
         <div class="card">
 
-            <h1>Welcome to JupyterHub!</h1>
+            <h1>Welcome to the LibreTexts and UC Davis JupyterHub!</h1>
 
             <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
 
@@ -77,27 +80,40 @@
                     for more information on navigating the interface.</li>
             </ul>
             <h2>Customizing JupyterHub</h2>
-            <h3 id="settingupcustomcondaenvironments">Can I create custom conda environments?</h3>
+            <h3 id="settingupcustomcondaenvironments">Can I create custom
+              persistent conda environments in my user account?</h3>
 
             <p>Please visit
                 <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
                 for information on creating custom conda environments.</p>
 
+            <h3>Can packages be added or upgraded in the default
+              environment?</h3>
+            <p>
+              Yes, please open a new issue explaining your needs or a pull
+              request adding/upgrading your packages at the <a
+              href="https://github.com/LibreTexts/default-env">default-env
+              repository</a>.
+            </p>
+
             <h3 id="settingupcustomenvironmentsforaclass">How do I set up custom environments for my class?</h3>
 
-            <p>If you are a teacher who wants to set up an environment with custom packages and kernels, please create one of
-                the following and email it to
-                <email>:</p>
-
+            <p>
+              If you are an instructor who wants to set up an environment with
+              custom packages and kernels for your course, please create one of
+              the following configuration files and notify us of it by email at
+              <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a>:
+            </p>
             <ol>
                 <li>One or more configuration files supported by
-                    <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
-                    <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
+                  <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
+                  <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.
+                </li>
 
                 <li>A
                     <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
                     <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
-                    that is already available to the community.</li>
+                    which are already available to the community.</li>
             </ol>
 
             <p>For an example of packages that could be included, please look at the
@@ -105,12 +121,12 @@
 
             <h2 id="contact">Contact</h2>
 
-            <p>If you have an technical issue, please first open one
-                <a href="https://github.com/LibreTexts/tech-Issues/issues">here</a> on GitHub. For other issues,
-                <a href="mailto:jupyterteam@ucdavis.edu">
-                    send us an email.</a>
+            <p>
+              If you have an technical issue, please first open one <a
+              href="https://github.com/LibreTexts/tech-Issues/issues">here</a>
+              on GitHub, otherwise <a href="mailto:jupyterteam@ucdavis.edu">
+              send us an email.</a>
             </p>
-
             <br>
         </div>
     </div>
