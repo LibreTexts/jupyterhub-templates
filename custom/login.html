@@ -1,6 +1,6 @@
 {% extends "templates/login.html" %} {% block main %}
 
-<div class="main-content">
+<div class="main-content container">
     <div class="branding">
         <div class="logos">
             <a class="logo" href="https://libretexts.org" target="_blank">
@@ -131,7 +131,8 @@
 {% endblock main %} {% block stylesheet %} {{ super() }}
 <style>
     .main-content {
-        margin: 30px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .logos {
@@ -193,6 +194,22 @@
             justify-content: space-around;
         }
     }
+
+    @media (max-width: 1400px) {
+        .logos {
+            justify-content: space-around;
+        }
+        .main-content {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1401 px) {
+        .main-content {
+            width: 1400px;
+        }
+    }
+
 
     .sponsors {
         display: flex;
