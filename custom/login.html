@@ -3,11 +3,19 @@
 <div class="main-content">
     <div class="branding">
         <div class="logos">
-            <a href="https://libretexts.org" target="_blank">
+            <a class="logo" href="https://libretexts.org" target="_blank">
                 <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" style="max-height:150px;max-width:100%;">
             </a>
-            <a href="https://ucdavis.edu" target="_blank" style="margin:30px;">
+            <a class="logo" href="https://ucdavis.edu" target="_blank" style="padding:20px;">
                 <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" style="max-height:60px;max-width:100%;">
+            </a>
+            <a class="logo" href="https://bioinformatics.ucdavis.edu/" target="_blank">
+                <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
+                    padding="0px">
+            </a>
+            <a class="logo" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+                target="_blank">
+                <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
             </a>
         </div>
     </div>
@@ -39,14 +47,7 @@
         </p>
 
         <div class="sponsors row align-items-center justify-content-around flex-wrap">
-            <a href="https://bioinformatics.ucdavis.edu/" target="_blank">
-                <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
-                    padding="0px">
-            </a>
-            <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-                target="_blank">
-                <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
-            </a>
+
         </div>
     </div>
 
@@ -90,8 +91,7 @@
             </h3>
             <p>
                 Yes, please open a new issue explaining your needs or a pull request adding/upgrading your packages at the
-                <a href="https://github.com/LibreTexts/default-env">default-env repository
-                </a>.
+                <a href="https://github.com/LibreTexts/default-env">default-env repository</a>.
             </p>
 
             <h3 id="settingupcustomenvironmentsforaclass">How do I set up custom environments for my class?</h3>
@@ -120,7 +120,7 @@
 
             <p>
                 If you have an technical issue, you can make a post on the support forum
-                <a href="https://libretexts-constructionforum.groups.io/g/jupyter">,
+                <a href="https://libretexts-constructionforum.groups.io/g/jupyter">support forum</a>,
                     <a href="https://github.com/LibreTexts/tech-Issues/issues">open an issue on Github</a>, or otherwise
                     <a href="mailto:jupyterteam@ucdavis.edu">send us an email</a>.
             </p>
@@ -137,8 +137,13 @@
     .logos {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-around;
         margin: auto 30px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        flex-basis: 50%;
     }
 
     .left-col {
@@ -168,9 +173,10 @@
     @media all and (max-width: 500px) {
         .logos {
             /* On small screens, we are no longer using row direction but column */
-            flex-direction: column;
+            /* flex-direction: column; */
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
         }
         /*
         .main {
@@ -185,7 +191,7 @@
 
     @media (max-width: 767px) {
         .logos {
-            justify-content: space-between;
+            justify-content: space-around;
         }
     }
 
