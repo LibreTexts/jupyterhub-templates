@@ -140,7 +140,7 @@
         align-items: center;
         justify-content: space-around;
         margin: auto 30px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .left-col {
@@ -184,14 +184,14 @@
             justify-content: center;
             max-width: 100%;
         }
-        .logo {
-            flex-basis: 50%;
-        }
     }
 
     @media (max-width: 767px) {
         .logos {
             justify-content: space-around;
+        }
+        .logo {
+            flex-basis: 50%;
         }
     }
 
