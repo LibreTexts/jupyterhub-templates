@@ -3,7 +3,12 @@
 {% block h1_error %}
 {% if status_code == 403 %}
 {{ super() }}
-<p>Please email jupyterteam@ucdavis.edu to request an account.</p>
+<p>
+    <strong>It looks like you need to request an account!</strong> If you are a LibreTexts instructor or UC Davis affiliate, you can request an account
+    by
+    <a href="mailto:jupyterteam@ucdavis.edu">sending us</a> an email from a Google Authentication connected email address. LibreTexts affiliated student
+    accounts should be requested by their instructors.
+</p>
 {% else %}
 {{ super() }}
 {% endif %}
