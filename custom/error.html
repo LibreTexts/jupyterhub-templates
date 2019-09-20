@@ -1,12 +1,27 @@
 {% extends "templates/error.html" %}
 
-{% block error_detail %}
-{% if exception and exception.my_message %}
-<div class="error">
-<p>Custom exception: {{ exception.my_message }}</p>
-</div>
+{% block h1_error %}
+{% if status_code == 403 %}
+{{ super() }}
+<p>
+  <strong>It looks like you need to request an account!</strong> If you are a LibreTexts instructor or UC Davis affiliate, you can request an account
+  by
+  <a href="mailto:jupyterteam@ucdavis.edu">sending us</a> an email from a Google Authentication connected email address. LibreTexts affiliated student
+  accounts should be requested by their instructors.
+</p>
+{% elif status_code == 400 %}
+{{ super() }}
+<p>
+  Please login again from <a href="https://jupyter.libretexts.org">the home page</a>.
+</p>
+{% elif status_code == 500 %}
+{{ super() }}
+<p>
+  Oh no! Something is wrong on our end. If this problem persists, please 
+  <a href="mailto:jupyterteam@ucdavis.edu">email us</a>.
+</p>
 {% else %}
 {{ super() }}
 {% endif %}
 
-{% endblock error_detail %}
+{% endblock h1_error %}
