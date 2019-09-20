@@ -1,12 +1,11 @@
 {% extends "templates/error.html" %}
 
-{% block error_detail %}
-{% if exception and exception.my_message %}
-<div class="error">
-<p>Custom exception: {{ exception.my_message }}</p>
-</div>
+{% block h1_error %}
+{% if status_code == 403 %}
+{{ super() }}
+<p>Please email jupyterteam@ucdavis.edu to request an account.</p>
 {% else %}
 {{ super() }}
 {% endif %}
 
-{% endblock error_detail %}
+{% endblock h1_error %}
