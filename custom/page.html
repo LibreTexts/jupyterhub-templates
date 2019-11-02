@@ -110,8 +110,8 @@
       </div>
 
       <div class="collapse navbar-collapse" id="thenavbar">
-        {% if user %}
         <ul class="nav navbar-nav">
+          {% if user %}
           {% block nav_bar_left_items %}
             <li><a href="{{base_url}}home">Home</a></li>
             <li><a href="{{base_url}}token">Token</a></li>
@@ -119,8 +119,10 @@
             <li><a href="{{base_url}}admin">Admin</a></li>
             {% endif %}
           {% endblock %}
+          {% endif %}
+          <li><a href="{{ static_url('external/pages/about.html') }}">About</a></li>
+          <li><a href="{{ static_url('external/pages/faq.html') }}">FAQ</a></li>
         </ul>
-        {% endif %}
         <ul class="nav navbar-nav navbar-right">
           {% block nav_bar_right_items %}
             <li>
