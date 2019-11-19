@@ -1,375 +1,297 @@
-{% extends "templates/login.html" %} {% block main %}
+{% extends "templates/login.html" %}
 
+{% block main %}
 <div class="main-content container">
-    <div class="branding">
-        <div class="logos">
-            <a class="logo" href="https://libretexts.org" target="_blank">
-                <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" style="max-height:150px;max-width:100%;">
-            </a>
-            <a class="logo" href="https://ucdavis.edu" target="_blank" style="padding:20px;">
-                <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" style="max-height:60px;max-width:100%;">
-            </a>
-            <a class="logo" href="https://bioinformatics.ucdavis.edu/" target="_blank">
-                <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
-                    padding="0px">
-            </a>
-            <a class="logo" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-                target="_blank">
-                <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
-            </a>
-        </div>
+  <div class="branding">
+    <div class="logos">
+      <a class="logo" href="https://libretexts.org" target="_blank">
+        <img src="/hub/static/external/images/libretexts_logo.png" alt="Libretexts" style="max-height:150px;max-width:100%;">
+      </a>
+      <a class="logo" href="https://ucdavis.edu" target="_blank" style="padding:20px;">
+        <img src="/hub/static/external/images/UC_Davis_Wordmarks/2018/Extended/PNG/expanded_logo_blue.png" alt="UC Davis" style="max-height:60px;max-width:100%;">
+      </a>
+      <a class="logo" href="https://bioinformatics.ucdavis.edu/" target="_blank">
+        <img class="sponsor" src="/hub/static/external/images/BioinformaticsCore.png" alt="UC Davis Genome Center Bioinformatics Core"
+              padding="0px">
+      </a>
+      <a class="logo" href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+          target="_blank">
+        <img class="sponsor" src="/hub/static/external/images/DOESeal.svg" alt="U.S. Department of Education">
+      </a>
     </div>
+  </div>
 
-    {% block login %}
-    <div class="col-sm-4 left-col">
-        <div class="card" id="login-box">
-            <h3 align="center">Login to JupyterHub</h3>
-            {{ super() }}
-            <p>
-                <strong>Need an account?</strong> If you are a LibreTexts instructor or UC Davis affiliate, you can request an account
-                by
-                <a href="mailto:jupyterteam@ucdavis.edu">sending us</a> an email from a Google Authentication connected email address. LibreTexts affiliated student
-                accounts should be requested by their instructors.
-            </p>
-            <p>
-                <strong>Have an issue?</strong> Please
-                <a href="https://github.com/LibreTexts/tech-Issues/issues/new">open an issue</a>
-                on our
-                <a href="https://github.com/LibreTexts/tech-Issues/">tech-Issues repository</a> with a GitHub account.</p>
-        </div>
-        <p>
-            <small>
-                Funded by the
-                <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
-                    target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)
-                </a> from the U.S. Department of Education. Equipment and support provided by the
-                <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>.</small>
-        </p>
-
-        <div class="sponsors row align-items-center justify-content-around flex-wrap">
-
-        </div>
+  {% block login %}
+  <div class="col-sm-4 left-col">
+    <div id="login-box">
+      <h3 align="center">Login to JupyterHub</h3>
+      {{ super() }}
     </div>
+    <p>
+      <small>
+        Funded by the
+        <a href="https://www.ed.gov/news/press-releases/us-department-education-awards-49-million-grant-university-california-davis-develop-free-open-textbooks-program"
+            target="_blank"> Open Textbooks Pilot Program (CFDA No. 84.116T)
+        </a> from the U.S. Department of Education. Equipment and support provided by the
+        <a href="https://bioinformatics.ucdavis.edu/" target="_blank">UC Davis Genome Center Bioinformatics Core</a>.
+      </small>
+    </p>
 
+    <div class="sponsors row align-items-center justify-content-around flex-wrap"></div>
+  </div>
+  {% endblock login %}
 
-    {% endblock login %}
-    <div class="container col-sm-7">
-        <div class="card">
+  <div class="container col-sm-7">
+    <h1>Welcome to the LibreTexts and UC Davis JupyterHub!</h1>
+    <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
 
-            <h1>Welcome to the LibreTexts and UC Davis JupyterHub!</h1>
+    <h2>Need an account?</h2>
+    <p>
+      If you are a LibreTexts instructor or UC Davis affiliate, you can request an account by <a href="mailto:jupyterteam@ucdavis.edu">sending us</a> an email from a Google Authentication connected email address. LibreTexts affiliated student accounts should be requested by their instructors.
+    </p>
 
-            <p>This JupyterHub serves LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students.</p>
+    <h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
+    <p>
+      <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
+    </p>
 
-            <h2 id="gettingstartedwithjupyter">Getting started with Jupyter</h2>
+    <p>Some resources to learn Jupyter:</p>
+    <ul>
+      <li>
+        <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages
+      </li>
+      <li>
+        <a href="https://github.com/Reproducible-Science-Curriculum/introduction-RR-Jupyter/blob/e5aece1011a43edfd739cbd83a2f4346091a86e2/notebooks/getting_started_with_jupyter_notebooks.ipynb"> Familiarize Yourself with Jupyter</a>, an example Jupyter Notebook tutorial on GitHub
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a> of how to navigate the Jupyter Notebook.
+      </li>
 
-            <p>
-                <a href="https://jupyter.org/index.html">Jupyter</a> is an environment where you can create interactive notebooks with code, visualizations, and more.
-            </p>
+      <li>
+        Visit the <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a> for more information on navigating the interface.
+      </li>
+    </ul>
 
-            <p>Some resources to learn Jupyter:</p>
-
-            <ul>
-                <li>
-                    <a href="https://jupyter.org/try">jupyter.org/try</a> has interactive demo notebooks in many different languages</li>
-                <li>
-                    <a href="https://github.com/Reproducible-Science-Curriculum/introduction-RR-Jupyter/blob/e5aece1011a43edfd739cbd83a2f4346091a86e2/notebooks/getting_started_with_jupyter_notebooks.ipynb">
-                        Familiarize Yourself with Jupyter</a>, an example Jupyter Notebook tutorial on GitHub</li>
-
-                <li>
-                    <a href="https://www.youtube.com/watch?v=DLWBfR2hxoo&amp;list=PLUrHeD2K9CmnCOjrnHzSIbZbZmDE-lQRt">Demo video of Jupyter</a>
-                    of how to navigate the Jupyter Notebook.</li>
-
-                <li>Visit the
-                    <a href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab documentation</a>
-                    for more information on navigating the interface.</li>
-            </ul>
-            <h2>Customizing JupyterHub</h2>
-            <h3 id="settingupcustomcondaenvironments">Can I create custom persistent conda environments in my user account?</h3>
-
-            <p>Please visit
-                <a href="https://github.com/LibreTexts/default-env#creating-your-own-custom-conda-environment">here</a>
-                for information on creating custom conda environments.</p>
-
-            <h3>Can packages be added or upgraded in the default environment?
-            </h3>
-            <p>
-                Yes, please open a new issue explaining your needs or a pull request adding/upgrading your packages at the
-                <a href="https://github.com/LibreTexts/default-env">default-env repository</a>.
-            </p>
-
-            <h3>How do I distribute files to students?</h3> 
-
-            <p>
-                You can distribute files using <a href="https://jupyterhub.github.io/nbgitpuller/index.html">nbgitpuller</a>.
-                Please store your files in a GitHub repository and we will set up a custom environment that will
-                update the files whenever a student spawns a server. This is a good option since students don't
-                need to understand git, but keep in mind that nbgitpuller does have some 
-                <a href="https://jupyterhub.github.io/nbgitpuller/topic/automatic-merging.html">limitations</a>.
-                
-                Other options include hosting your files on an external site, like GitHub or Google Drive,
-                where students can download them.
-            </p>
-
-            <h3 id="settingupcustomenvironmentsforaclass">How do I set up custom environments for my class?</h3>
-
-            <p>
-                If you are an instructor who wants to set up an environment with custom packages and kernels for your course, please create
-                one of the following configuration files and notify us of it by email at
-                <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a>:
-            </p>
-            <ol>
-                <li>One or more configuration files supported by
-                    <a href="https://repo2docker.readthedocs.io">repo2docker</a> that list your desired packages. Supported configuration files are listed
-                    <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.
-                </li>
-
-                <li>A
-                    <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. We recommend using or building on top of a
-                    <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker Stack</a>
-                    which are already available to the community.</li>
-            </ol>
-
-            <p>For an example of packages that could be included, please look at the
-                <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#core-stacks">Jupyter Core Stacks</a>.</p>
-
-            <h2 id="contact">Contact</h2>
-
-            <p>
-                If you have an technical issue, you can make a post on the support forum
-                <a href="https://libretexts-constructionforum.groups.io/g/jupyter">support forum</a>,
-                <a href="https://github.com/LibreTexts/tech-Issues/issues">open an issue on Github</a>, or otherwise
-                <a href="mailto:jupyterteam@ucdavis.edu">send us an email</a>.
-            </p>
-            <br>
-        </div>
-    </div>
+    <h2>Any questions?</h2>
+    <p>Please checkout our <a href="{{ static_url('external/pages/faq.html') }}">faq</a> page. If you can't find your question, feel free to email us at <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a>. For technical issues, open an issue on <a href="https://github.com/LibreTexts/metalc/issues" target="_blank">Github</a> and we will try to resolve it.</p>
+  </div>
 </div>
-{% endblock main %} {% block stylesheet %} {{ super() }}
+{% endblock main %}
+
+{% block stylesheet %}
+{{ super() }}
 <style>
-    .main-content {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto 30px;
+    flex-wrap: nowrap;
+  }
+
+  .left-col {
+    margin-top: 20px;
+  }
+
+  #libretexts {
+    max-height: 150px;
+  }
+
+  #ucdavis {
+    max-height: 60px;
+    padding: 10px;
+  }
+
+  .brand {
+    flex-shrink: 2;
+  }
+
+  @media all and (max-width: 500px) {
     .logos {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin: auto 30px;
-        flex-wrap: nowrap;
+      /* On small screens, we are no longer using row direction but column */
+      /* flex-direction: column; */
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
-    .left-col {
-        margin-top: 20px;
+    .branding img {
+      justify-content: center;
+      max-width: 100%;
     }
+  }
 
-    #libretexts {
-        max-height: 150px;
+  @media (max-width: 767px) {
+    .logos {
+      justify-content: space-around;
     }
-
-    #ucdavis {
-        max-height: 60px;
-        padding: 10px;
+    .logo {
+      flex-basis: 50%;
     }
+  }
 
-    .brand {
-        flex-shrink: 2;
+  @media (max-width: 1400px) {
+    .logos {
+      justify-content: space-around;
     }
-
-    /*  .main {
-        display: flex;
-        flex-direction: row;
-        align-items: baseline;
-        margin: auto 20px;
-    } */
-
-    @media all and (max-width: 500px) {
-        .logos {
-            /* On small screens, we are no longer using row direction but column */
-            /* flex-direction: column; */
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        /*
-        .main {
-            flex-direction: column;
-            justify-content: center;
-        } */
-        .branding img {
-            justify-content: center;
-            max-width: 100%;
-        }
+    .main-content {
+      width: 100%;
     }
+  }
 
-    @media (max-width: 767px) {
-        .logos {
-            justify-content: space-around;
-        }
-        .logo {
-            flex-basis: 50%;
-        }
+  @media (min-width: 1401 px) {
+    .main-content {
+      width: 1400px;
     }
+  }
 
-    @media (max-width: 1400px) {
-        .logos {
-            justify-content: space-around;
-        }
-        .main-content {
-            width: 100%;
-        }
-    }
+  .sponsors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
-    @media (min-width: 1401 px) {
-        .main-content {
-            width: 1400px;
-        }
-    }
+  .sponsors-footer {
+    height: 300px;
+  }
 
+  .sponsor {
+    padding: 10px;
+    max-width: 100%;
+    max-height: 150px;
+  }
 
-    .sponsors {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+  #login-box {
+    border: 1px solid silver;
+    padding: 10px;
+    margin-bottom: 30px;
+    /*   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 5px;
+    flex-grow: 2;
+  }
 
-    .sponsors-footer {
-        height: 300px;
-    }
+  .body {
+    padding-bottom: 50px;
+  }
 
-    .sponsor {
-        padding: 10px;
-        max-width: 100%;
-        max-height: 150px;
-    }
+  #login-main .auth-form-body {
+    border-color: rgb(0, 124, 186);
+    color: white;
+  }
 
-    #login-box {
-        border: 1px solid silver;
-        padding: 10px;
-        margin-bottom: 30px;
-        /*   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-        border-radius: 5px;
-        flex-grow: 2;
-    }
+  #login-main {
+    margin-top: 5%;
+    height: inherit;
+    width: inherit;
+    margin-bottom: 5%;
+  }
 
-    .body {
-        padding-bottom: 50px;
-    }
+  #login-main .container {
+    width: 50%;
+  }
 
-    #login-main .auth-form-body {
-        border-color: rgb(0, 124, 186);
-        color: white;
-    }
+  footer {
+    border-top: 1px solid silver;
+    padding: 10px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
 
-    #login-main {
-        margin-top: 5%;
-        height: inherit;
-        width: inherit;
-        margin-bottom: 5%;
-    }
+  footer p {
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
 
-    #login-main .container {
-        width: 50%;
-    }
+  #login-main form {
+    vertical-align: top;
+  }
 
-    footer {
-        border-top: 1px solid silver;
-        padding: 10px;
-        bottom: 0;
-        position: fixed;
-        width: 100%;
-    }
+  #login-main .auth-form-header {
+    color: white;
+    background: rgb(219, 170, 0);
+    border: 1px solid;
+    border-color: rgb(0, 124, 186);
+  }
 
-    footer p {
-        margin: 0 auto 0 auto;
-        text-align: center;
-    }
+  #insecure-login-warning {
+    color: black;
+  }
 
-    #login-main form {
-        vertical-align: top;
-    }
+  .btn-jupyter.active,
+  .btn-jupyter:active,
+  .open>.dropdown-toggle.btn-jupyter {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #a88400;
+    border-color: #a88400;
+    outline-color: #a88400;
+  }
 
-    #login-main .auth-form-header {
-        color: white;
-        background: rgb(219, 170, 0);
-        border: 1px solid;
-        border-color: rgb(0, 124, 186);
-    }
+  #login-main .form-control:focus,
+  #login-main input[type=submit]:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(219, 170, 0);
+    border-color: rgb(219, 170, 0);
+    outline-color: rgb(219, 170, 0);
+  }
 
-    #insecure-login-warning {
-        color: black;
-    }
+  .btn-jupyter {
+    color: #fff;
+    background-color: #F37524;
+    border-color: #E34F21;
+    padding: 10px;
+  }
 
-    .btn-jupyter.active,
-    .btn-jupyter:active,
-    .open>.dropdown-toggle.btn-jupyter {
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #a88400;
-        border-color: #a88400;
-        outline-color: #a88400;
-    }
+  .col-1 {
+    width: 8.33%;
+  }
 
-    #login-main .form-control:focus,
-    #login-main input[type=submit]:focus {
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(219, 170, 0);
-        border-color: rgb(219, 170, 0);
-        outline-color: rgb(219, 170, 0);
-    }
+  .col-2 {
+    width: 16.66%;
+  }
 
-    .btn-jupyter {
-        color: #fff;
-        background-color: #F37524;
-        border-color: #E34F21;
-        padding: 10px;
-    }
+  .col-3 {
+    width: 25%;
+  }
 
-    .col-1 {
-        width: 8.33%;
-    }
+  .col-4 {
+    width: 33.33%;
+  }
 
-    .col-2 {
-        width: 16.66%;
-    }
+  .col-5 {
+    width: 41.66%;
+  }
 
-    .col-3 {
-        width: 25%;
-    }
+  .col-6 {
+    width: 50%;
+  }
 
-    .col-4 {
-        width: 33.33%;
-    }
+  .col-7 {
+    width: 58.33%;
+  }
 
-    .col-5 {
-        width: 41.66%;
-    }
+  .col-8 {
+    width: 66.66%;
+  }
 
-    .col-6 {
-        width: 50%;
-    }
+  .col-9 {
+    width: 75%;
+  }
 
-    .col-7 {
-        width: 58.33%;
-    }
+  .col-10 {
+    width: 83.33%;
+  }
 
-    .col-8 {
-        width: 66.66%;
-    }
+  .col-11 {
+    width: 91.66%;
+  }
 
-    .col-9 {
-        width: 75%;
-    }
-
-    .col-10 {
-        width: 83.33%;
-    }
-
-    .col-11 {
-        width: 91.66%;
-    }
-
-    .col-12 {
-        width: 100%;
-    }
+  .col-12 {
+    width: 100%;
+  }
 </style>
 {% endblock %}
