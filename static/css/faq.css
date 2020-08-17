@@ -1,6 +1,5 @@
 body {
   background-color: #F7F8F9;
-  font-family: "Fira Sans", sans-serif;
 }
 
 h1 {
@@ -22,6 +21,7 @@ section#faq {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 40px;
+  font-family: "Fira Sans", sans-serif;
 }
 
 @media (max-width: 576px) {
