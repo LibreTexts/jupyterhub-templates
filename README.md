@@ -12,9 +12,9 @@ The `faqrenderer` folder contains the FAQ markdown file and a Python script that
 
 # Usage
 
-A couple of things need to be setup for this to work:
+Two things need to be setup for this to work:
 
-1. Custom handlers for `/hub/about` and `/hub/faq`. Add this to JupyterHub's config:
+1. Custom handlers for `/hub/about` and `/hub/faq`, along with setting `template_paths` to point JupyterHub to our custom templates. Add this to JupyterHub's config:
 ```python
 from jupyterhub.handlers.base import BaseHandler
 class AboutHandler(BaseHandler):
@@ -27,6 +27,7 @@ c.JupyterHub.extra_handlers.extend([
     (r"about", AboutHandler),
     (r"faq", FAQHandler),
 ])
+c.JupyterHub.template_paths = ['/etc/jupyterhub/templates']
 ```
 
 If you're using Z2JH, you can add this to the helm values like this:
