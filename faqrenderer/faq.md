@@ -47,21 +47,17 @@ The best way to permanently install new packages onto your account is through co
 
 1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
 ![Finding the Terminal](terminal.png)
-2. Within the terminal, use the command <code>conda create -n your_env_name packages</code> to create your environment.
-  Here's an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel and `numpy`, `pandas` and `matplotlib` packages:
-  ```sh
-  conda create -n scipkg ipykernel numpy pandas matplotlib
-  ```
+
+2. Within the terminal, use the command `conda create -n 'your_env_name' 'kernel' 'packages'` to create your environment.
+  Below is an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel along with the python packages `numpy`, `pandas` and `matplotlib`. In general, you may include any packages which are available through conda.
   ![Conda Create command](conda-create.png)
-3. To use your new environment in a Jupyter Notebook, open the launcher (Ctrl+Shift+L) and select your environment from there.
-  In the above <code>scipkg</code> example, the environment will appear as `Python [conda env:.conda-scipkg]`.
-  You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
-  ![Launch the conda environmetn](env-launcher.png)
-4. To use your new environment in a terminal, type `conda activate your_env_name`.
-  You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active.
-  Note that the environment will only be active within that specific terminal session.
-  To deactivate, run `conda deactivate`.
+  *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation by pressing `y` or by initially running `conda create` with a `-y` flag.*
+
+3. Activate your environment using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the  terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
   ![Conda Activate command](conda-activate.png)
+
+4. If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. open the launcher (Ctrl+Shift+L) and select your environment from there. Using the `scipkg` example, the environment will appear as `Python [conda env:.conda-scipkg]`. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
+  ![Launch the conda environment](env-launcher.png)
 
 Note that if you want to use your environment with a Jupyter notebook, you must install a [Jupyter kernel](#what-is-a-jupyter-kernel) along with your packages. Here's a list of common languages and their kernels:
 
