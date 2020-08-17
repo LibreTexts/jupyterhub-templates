@@ -24,7 +24,7 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
         # if not, it probably is image.png or sth similar
         # not doing proper escaping of quotes, but good enough
         if '/' not in src:
-            src = '{{ static_url("images/faq/%s") }}' % src
+            src = '{{ static_url("external/images/faq/%s") }}' % src
         else:
             src = mistune.escape_link(src)
         # the rest is the same as the original function
