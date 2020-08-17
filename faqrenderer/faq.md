@@ -8,7 +8,7 @@ To open an RStudio interface, you can select the RStudio notebook from the Jupyt
 
 Most of the packages are at their latest version as of August 2020.
 
-Most notably, all supported languages except for Octave and C++ has been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if they work on a newer version. Here's a list of all the languages we support and the version changes:
+Most notably, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:
 
 | Language | Old version | New version |
 | - | - | - |
@@ -35,7 +35,7 @@ Go to File -> Hub Control Panel: TODO
 
 ## Can I install additional packages?
 
-You are free to install any additional packages available through conda by (creating a conda environment)[#how-do-i-create-a-persistent-conda-environment]. These packages will persist for you. You may also use `conda install` directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.
+You are free to install any additional packages available through conda by [creating a conda environment](#how-do-i-create-a-persistent-conda-environment). These packages will persist for you. You may also use `conda install` directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.
 
 TODO: Add documentation on how octave, sagemath, julia pkg managers work. Note that `pip install --user` would persist.
 
@@ -45,19 +45,23 @@ You may also request packages to be installed for everyone in the default enviro
 
 The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.
 
-- In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
-- Within the terminal, use the command <code>conda create -n your_env_name packages</code> to create your environment.
+1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
+![Finding the Terminal](terminal.png)
+2. Within the terminal, use the command <code>conda create -n your_env_name packages</code> to create your environment.
   Here's an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel and `numpy`, `pandas` and `matplotlib` packages:
   ```sh
   conda create -n scipkg ipykernel numpy pandas matplotlib
   ```
-- To use your new environment in a Jupyter Notebook, open the launcher (Ctrl+Shift+L) and select your environment from there.
+  ![Conda Create command](conda-create.png)
+3. To use your new environment in a Jupyter Notebook, open the launcher (Ctrl+Shift+L) and select your environment from there.
   In the above <code>scipkg</code> example, the environment will appear as `Python [conda env:.conda-scipkg]`.
   You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
-- To use your new environment in a terminal, type `conda activate your_env_name`.
+  ![Launch the conda environmetn](env-launcher.png)
+4. To use your new environment in a terminal, type `conda activate your_env_name`.
   You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active.
   Note that the environment will only be active within that specific terminal session.
   To deactivate, run `conda deactivate`.
+  ![Conda Activate command](conda-activate.png)
 
 Note that if you want to use your environment with a Jupyter notebook, you must install a [Jupyter kernel](#what-is-a-jupyter-kernel) along with your packages. Here's a list of common languages and their kernels:
 
@@ -68,7 +72,7 @@ Note that if you want to use your environment with a Jupyter notebook, you must 
 | C++ | xeus-cling |
 | Octave | octave_kernel |
 
-You may view all your created conad environments using `conda env list`. To remove an environment, use `conda env remove -n your_env_name`. You can learn more about [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) and [more conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html) from the linked documentation.
+You may view all your created conda environments using `conda env list`. To remove an environment, use `conda env remove -n your_env_name`. For reference, all of your created environments are stored in `/home/jovyan/.conda/envs/`. You can learn more about [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) and [more conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html) from the linked documentation.
 
 ## What is a Jupyter kernel?
 

@@ -8,7 +8,7 @@
 <p><img src="{{ static_url("external/images/faq/RStudio-launcher.png") }}" alt="RStudio Launcher icon"></p>
 <h2>What do I need to know about the new environment?</h2>
 <p>Most of the packages are at their latest version as of August 2020.</p>
-<p>Most notably, all supported languages except for Octave and C++ has been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if they work on a newer version. Here's a list of all the languages we support and the version changes:</p>
+<p>Most notably, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:</p>
 <table>
 <thead><tr>
 <th>Language</th>
@@ -60,25 +60,28 @@
 <h2>How do I restart my JupyterLab server?</h2>
 <p>Go to File -&gt; Hub Control Panel: TODO</p>
 <h2>Can I install additional packages?</h2>
-<p>You are free to install any additional packages available through conda by (creating a conda environment)[#how-do-i-create-a-persistent-conda-environment]. These packages will persist for you. You may also use <code>conda install</code> directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.</p>
+<p>You are free to install any additional packages available through conda by <a href="#how-do-i-create-a-persistent-conda-environment">creating a conda environment</a>. These packages will persist for you. You may also use <code>conda install</code> directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.</p>
 <p>TODO: Add documentation on how octave, sagemath, julia pkg managers work. Note that <code>pip install --user</code> would persist.</p>
 <p>You may also request packages to be installed for everyone in the default environment. This is useful if you think most LibreTexts users would benefit from a package, or if you're running a class with many students who need the package by default. In that case, please <a href="mailto:jupyterteam@ucdavis.edu">email us</a>.</p>
 <h2>How do I create a persistent Conda environment?</h2>
 <p>The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.</p>
-<ul>
-<li>In the top left corner, open a terminal by going to File-&gt;New-&gt;Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.</li>
+<ol>
+<li>In the top left corner, open a terminal by going to File-&gt;New-&gt;Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
+<img src="{{ static_url("external/images/faq/terminal.png") }}" alt="Finding the Terminal"></li>
 <li>Within the terminal, use the command <code>conda create -n your_env_name packages</code> to create your environment.
 Here's an example that creates an environment called <code>scipkg</code>, which contains the <code>ipykernel</code> kernel and <code>numpy</code>, <code>pandas</code> and <code>matplotlib</code> packages:<pre><code class="lang-sh">conda create -n scipkg ipykernel numpy pandas matplotlib
 </code></pre>
-</li>
+<img src="{{ static_url("external/images/faq/conda-create.png") }}" alt="Conda Create command"></li>
 <li>To use your new environment in a Jupyter Notebook, open the launcher (Ctrl+Shift+L) and select your environment from there.
 In the above <code>scipkg</code> example, the environment will appear as <code>Python [conda env:.conda-scipkg]</code>.
-You may have to wait a little bit for the icon to appear; refresh the webpage if needed.</li>
+You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
+<img src="{{ static_url("external/images/faq/env-launcher.png") }}" alt="Launch the conda environmetn"></li>
 <li>To use your new environment in a terminal, type <code>conda activate your_env_name</code>.
 You should now see <code>(your_env_name)</code> at the beginning of the terminal prompt. This indicates that the environment is active.
 Note that the environment will only be active within that specific terminal session.
-To deactivate, run <code>conda deactivate</code>.</li>
-</ul>
+To deactivate, run <code>conda deactivate</code>.
+<img src="{{ static_url("external/images/faq/conda-activate.png") }}" alt="Conda Activate command"></li>
+</ol>
 <p>Note that if you want to use your environment with a Jupyter notebook, you must install a <a href="#what-is-a-jupyter-kernel">Jupyter kernel</a> along with your packages. Here's a list of common languages and their kernels:</p>
 <table>
 <thead><tr>
@@ -105,7 +108,7 @@ To deactivate, run <code>conda deactivate</code>.</li>
 </tr>
 </tbody>
 </table>
-<p>You may view all your created conad environments using <code>conda env list</code>. To remove an environment, use <code>conda env remove -n your_env_name</code>. You can learn more about <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">managing environments</a> and <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">more conda commands</a> from the linked documentation.</p>
+<p>You may view all your created conda environments using <code>conda env list</code>. To remove an environment, use <code>conda env remove -n your_env_name</code>. For reference, all of your created environments are stored in <code>/home/jovyan/.conda/envs/</code>. You can learn more about <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">managing environments</a> and <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">more conda commands</a> from the linked documentation.</p>
 <h2>What is a Jupyter kernel?</h2>
 <p>Jupyter kernels are language specific <a href="https://jupyterlab.readthedocs.io/en/stable/user/running.html">managing kernels</a></p>
 <p>TODO finish</p>
