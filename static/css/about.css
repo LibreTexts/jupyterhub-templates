@@ -1,9 +1,9 @@
-#about-page {
+body {
   background-color: #F7F8F9;
   font-family: "Fira Sans", sans-serif;
 }
 
-#about-page h2 {
+h2 {
   color: #2D2441;
   font-size: 48px;
   text-align: center;
@@ -16,13 +16,13 @@
   }
 }
 
-#about-page h2.subtitle {
+h2.subtitle {
   margin-top: -8px;
   font-size: 18px;
   color: #837681;
 }
 
-#about-page p {
+p {
   color: #837681;
   line-height: 26px;
   font-size: 16px;

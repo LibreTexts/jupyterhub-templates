@@ -1,9 +1,9 @@
-#faq-page {
+body {
   background-color: #F7F8F9;
   font-family: "Fira Sans", sans-serif;
 }
 
-#faq-page h1 {
+h1 {
   color: #2D2441;
   font-size: 48px;
   text-align: center;
@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 576px) {
-  #faq-page h1 {
+  h1 {
     font-size: 35px;
   }
 }
@@ -58,4 +58,15 @@ section#faq a:hover, section#faq a:focus, section#faq a:visited {
   color: #DA5E0D;
   text-decoration: none;
   border-bottom: none;
+}
+
+table {
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #2D2441;
 }
