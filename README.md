@@ -34,7 +34,7 @@ If you're using Z2JH, you can add this to the helm values like this:
 ```yaml
 hub:
   extraConfig:
-    customtemplates: |
+    templates: |
       from jupyterhub.handlers.base import BaseHandler
       ... (rest of the config file)
 ```
@@ -45,13 +45,14 @@ hub:
   initContainers:
     - name: git-clone-templates
       image: alpine/git
-      command: /bin/sh 
-      args:
+      command:
+        - /bin/sh
         - -c
-        - |
-          git clone --branch=master https://github.com/LibreTexts/jupyterhub-templates.git &&
-          cp -r jupyterhub-templates/templates /templates &&
-          cp -r jupyterhub-templates/static /static
+      args:
+        - >-
+            git clone --branch=master https://github.com/LibreTexts/jupyterhub-templates.git &&
+            cp -r jupyterhub-templates/templates/* /templates &&
+            cp -r jupyterhub-templates/static/* /static
       volumeMounts:
         - name: custom-templates
           mountPath: /templates
