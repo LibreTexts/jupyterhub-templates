@@ -1,0 +1,46 @@
+{% extends "page.html" %}
+
+{% macro member(name, photo, title) %}
+<li class="member">
+  <div class="member-avatar">
+    <img src="{{ static_url("external/images/about/" + photo) }}" alt="{{ name }}'s photo">
+  </div>
+  <div class="member-description">
+    <div class="title">{{ name }}</div>
+    <div class="subtitle">{{ title }}</div>
+  </div>
+</li>
+{% endmacro %}
+
+{% block main %}
+<section id="about">
+  <h2>Jupyter Team</h2>
+  <h2 class="subtitle">LibreTexts</h2>
+  <p>As part of a pioneering initiative at UC Davis, this JupyterHub equips LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students. Since LibreTexts has grown to being one of the largest open access textbook websites, this JupyterHub complements the plethora of educational texts available by providing the resources for learning through hands-on computing. Additionally, collaboration with the UC Davis Bioinformatics Core has made possible a dynamic and flexible environment that provides dual support for education and research.</p>
+  <p>The groundwork for the foundation that has been built is through a broad set of open source software tools in many languages. Furthermore, given the ever-fluctuating changes and requirements when it comes to research, this JupyterHub brings forth a cross-disciplinary approach by allowing for powerful data analysis and computing to take place. Such a resource would not be possible without the expertise of students and faculty that began the project in February 2019 through grant support and collaboration with LibreTexts and the UC Davis Genome Center.</p>
+</section>
+<section id="member">
+  <h2>Current Team</h2>
+  <ul class="members">
+    {{ member("Jason Moore", "jason.jpg", "Assistant Professor of Teaching") }}
+    {{ member("Richard Feltstykket", "richard.jpg", "Systems Administrator") }}
+    {{ member("Noah Sanders", "noah.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Kevin Rong", "kevin2.png", "Site Reliability Engineering Assistant") }}
+  </ul>
+
+  <h2>Past Team Members</h2>
+  <ul class="members">
+    {{ member("Celine Liang", "celine.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Tannavee Kumar", "tannavee.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Hao Huang", "hao.jpg", "Site Reliability Engineering Assistant") }}
+    {{ member("Xin Luigi Chen", "luigi.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Xiaochen Zeng", "xiaochen.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Kevin Krausse", "kevin.png", "Site Reliability Engineering Assistant") }}
+  </ul>
+</section>
+{% endblock main %}
+
+{% block stylesheet %}
+{{ super() }}
+<link rel="stylesheet" href="{{ static_url("external/css/about.css") }}" type="text/css"/>
+{% endblock stylesheet %}
