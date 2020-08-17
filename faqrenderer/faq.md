@@ -53,11 +53,15 @@ The best way to permanently install new packages onto your account is through co
   ![Conda Create command](conda-create.png)
   *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation by pressing `y` or by initially running `conda create` with a `-y` flag.*
 
-3. Activate your environment using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the  terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
+3. Activate your environment using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
   ![Conda Activate command](conda-activate.png)
 
-4. If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. open the launcher (Ctrl+Shift+L) and select your environment from there. Using the `scipkg` example, the environment will appear as `Python [conda env:.conda-scipkg]`. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
+4. If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your environment from there. Using the `scipkg` example, the environment will appear as `Python [conda env:.conda-scipkg]`. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
   ![Launch the conda environment](env-launcher.png)
+  Once the notebook opens, you can verify that you are using the proper environment by looking in the top right corner;
+  ![Notebook environment](notebook.png) 
+
+5. Now your conda environment is created! You may access it in the terminal by `conda activate 'your_env_name'` or as a notebook from the launcher at any time. 
 
 Note that if you want to use your environment with a Jupyter notebook, you must install a [Jupyter kernel](#what-is-a-jupyter-kernel) along with your packages. Here's a list of common languages and their kernels:
 

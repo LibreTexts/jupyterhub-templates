@@ -74,11 +74,15 @@ Below is an example that creates an environment called <code>scipkg</code>, whic
 <img src="{{ static_url("external/images/faq/conda-create.png") }}" alt="Conda Create command">
 <em>Do not worry if you recieve a warning about newer versions of conda when running the <code>conda create</code> command. Just proceed through the installation by pressing <code>y</code> or by initially running <code>conda create</code> with a <code>-y</code> flag.</em></p>
 </li>
-<li><p>Activate your environment using <code>conda activate your_env_name</code>. You should now see <code>(your_env_name)</code> at the beginning of the  terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run <code>conda deactivate</code>.
+<li><p>Activate your environment using <code>conda activate your_env_name</code>. You should now see <code>(your_env_name)</code> at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run <code>conda deactivate</code>.
 <img src="{{ static_url("external/images/faq/conda-activate.png") }}" alt="Conda Activate command"></p>
 </li>
-<li><p>If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. open the launcher (Ctrl+Shift+L) and select your environment from there. Using the <code>scipkg</code> example, the environment will appear as <code>Python [conda env:.conda-scipkg]</code>. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
-<img src="{{ static_url("external/images/faq/env-launcher.png") }}" alt="Launch the conda environment"></p>
+<li><p>If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your environment from there. Using the <code>scipkg</code> example, the environment will appear as <code>Python [conda env:.conda-scipkg]</code>. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
+<img src="{{ static_url("external/images/faq/env-launcher.png") }}" alt="Launch the conda environment">
+Once the notebook opens, you can verify that you are using the proper environment by looking in the top right corner;
+<img src="{{ static_url("external/images/faq/notebook.png") }}" alt="Notebook environment"></p>
+</li>
+<li><p>Now your conda environment is created! You may access it in the terminal by <code>conda activate 'your_env_name'</code> or as a notebook from the launcher at any time.</p>
 </li>
 </ol>
 <p>Note that if you want to use your environment with a Jupyter notebook, you must install a <a href="#what-is-a-jupyter-kernel">Jupyter kernel</a> along with your packages. Here's a list of common languages and their kernels:</p>
