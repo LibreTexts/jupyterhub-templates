@@ -46,19 +46,26 @@ You may also request packages to be installed for everyone in the default enviro
 The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.
 
 1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
+
 ![Finding the Terminal](terminal.png)
 
 2. Within the terminal, use the command `conda create -n 'your_env_name' 'kernel' 'packages'` to create your environment.
   Below is an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel along with the python packages `numpy`, `pandas` and `matplotlib`. In general, you may include any packages which are available through conda.
+
   ![Conda Create command](conda-create.png)
-  *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation by pressing `y` or by initially running `conda create` with a `-y` flag.*
+
+  *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation by pressing `y` or by initially running `conda create` with a `-y` flag at the end.*
 
 3. Activate your environment using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
+
   ![Conda Activate command](conda-activate.png)
 
 4. If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your environment from there. Using the `scipkg` example, the environment will appear as `Python [conda env:.conda-scipkg]`. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
+
   ![Launch the conda environment](env-launcher.png)
+  
   Once the notebook opens, you can verify that you are using the proper environment by looking in the top right corner;
+
   ![Notebook environment](notebook.png) 
 
 5. Now your conda environment is created! You may access it in the terminal by `conda activate 'your_env_name'` or as a notebook from the launcher at any time. 
