@@ -4,7 +4,7 @@
 <h1>Frequently Asked Questions</h1>
 <section id="faq">
 <h2>How do I access RStudio?</h2>
-<p>To open an RStudio interface, you can select the RStudio notebook from the Jupyter Launcher (ctrl+shift+L).</p>
+<p>To open an RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (ctrl+shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.</p>
 <p><img src="{{ static_url("external/images/faq/RStudio-launcher.png") }}" alt="RStudio Launcher icon"></p>
 <h2>What do I need to know about the new environment?</h2>
 <p>Most of the packages are at their latest version as of August 2020.</p>
@@ -58,7 +58,9 @@
 </ul>
 <p>To ease this transition, our old image will still be listed as an option when you login to JupyterHub, and it will be supported until December 31st, 2020 (?). Please email us at <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a> if you have concerns or issues with the new environment.</p>
 <h2>How do I restart my JupyterLab server?</h2>
-<p>Go to File -&gt; Hub Control Panel: TODO</p>
+<p>On the Libretexts JupyterHub, you spawn servers to provide you with JupyterLab software and you run your code using kernels. If you are actively running code and something unexpected occurs, <a href="#What is a Jupyter kernel?">restarting the kernel</a> can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server.</p>
+<p>Go to File-&gt;Hub Control Panel and you will be brought to a page with "Stop Server" and "My Server" buttons. Press Stop Server and you should see that that My Server button will dim; this means that the server is stopping. When the server has stopped (this should take less than 15 seconds), the webpage will prompt you with a "Start My Server" option. Press it, launch the server, and then you will be brought back to the Server Options page. Proceed with the environment of your choice, and you will now have a fresh server.</p>
+<p>By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your <code>/home/jovyan</code> directory. Think of these user files as being stored in a cloud, and each time you log in to the Hub, we provide you with a brand new server which has downloaded those files. For more detailed information on how your files are stored, see the documentation <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it">here</a></p>
 <h2>Can I install additional packages?</h2>
 <p>You are free to install any additional packages available through conda by <a href="#how-do-i-create-a-persistent-conda-environment">creating a conda environment</a>. These packages will persist for you. You may also use <code>conda install</code> directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.</p>
 <p>TODO: Add documentation on how octave, sagemath, julia pkg managers work. Note that <code>pip install --user</code> would persist.</p>
@@ -66,10 +68,9 @@
 <h2>How do I create a persistent Conda environment?</h2>
 <p>The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.</p>
 <ol>
-<li>In the top left corner, open a terminal by going to File-&gt;New-&gt;Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.</li>
-</ol>
+<li><p>In the top left corner, open a terminal by going to File-&gt;New-&gt;Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.</p>
 <p><img src="{{ static_url("external/images/faq/terminal.png") }}" alt="Finding the Terminal"></p>
-<ol>
+</li>
 <li><p>Within the terminal, use the command <code>conda create -n 'your_env_name' 'kernel' 'packages'</code> to create your environment.
 Below is an example that creates an environment called <code>scipkg</code>, which contains the <code>ipykernel</code> kernel along with the python packages <code>numpy</code>, <code>pandas</code> and <code>matplotlib</code>. In general, you may include any packages which are available through conda.</p>
 <p><img src="{{ static_url("external/images/faq/conda-create.png") }}" alt="Conda Create command"></p>

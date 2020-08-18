@@ -1,6 +1,6 @@
 ## How do I access RStudio?
 
-To open an RStudio interface, you can select the RStudio notebook from the Jupyter Launcher (ctrl+shift+L).
+To open an RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (ctrl+shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.
 
 ![RStudio Launcher icon](RStudio-launcher.png)
 
@@ -31,7 +31,11 @@ To ease this transition, our old image will still be listed as an option when yo
 
 ## How do I restart my JupyterLab server?
 
-Go to File -> Hub Control Panel: TODO
+On the Libretexts JupyterHub, you spawn servers to provide you with JupyterLab software and you run your code using kernels. If you are actively running code and something unexpected occurs, [restarting the kernel](#What is a Jupyter kernel?) can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server. 
+
+Go to File->Hub Control Panel and you will be brought to a page with "Stop Server" and "My Server" buttons. Press Stop Server and you should see that that My Server button will dim; this means that the server is stopping. When the server has stopped (this should take less than 15 seconds), the webpage will prompt you with a "Start My Server" option. Press it, launch the server, and then you will be brought back to the Server Options page. Proceed with the environment of your choice, and you will now have a fresh server.
+
+By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your `/home/jovyan` directory. Think of these user files as being stored in a cloud, and each time you log in to the Hub, we provide you with a brand new server which has downloaded those files. For more detailed information on how your files are stored, see the documentation [here](https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it) 
 
 ## Can I install additional packages?
 
@@ -47,10 +51,10 @@ The best way to permanently install new packages onto your account is through co
 
 1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
 
-![Finding the Terminal](terminal.png)
+  ![Finding the Terminal](terminal.png)
 
 2. Within the terminal, use the command `conda create -n 'your_env_name' 'kernel' 'packages'` to create your environment.
-  Below is an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel along with the python packages `numpy`, `pandas` and `matplotlib`. In general, you may include any packages which are available through conda.
+Below is an example that creates an environment called `scipkg`, which contains the `ipykernel` kernel along with the python packages `numpy`, `pandas` and `matplotlib`. In general, you may include any packages which are available through conda.
 
   ![Conda Create command](conda-create.png)
 
@@ -63,7 +67,7 @@ The best way to permanently install new packages onto your account is through co
 4. If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your environment from there. Using the `scipkg` example, the environment will appear as `Python [conda env:.conda-scipkg]`. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.
 
   ![Launch the conda environment](env-launcher.png)
-  
+
   Once the notebook opens, you can verify that you are using the proper environment by looking in the top right corner;
 
   ![Notebook environment](notebook.png) 
