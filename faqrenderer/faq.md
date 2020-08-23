@@ -46,12 +46,9 @@ To open the RStudio interface, you can select the RStudio notebook icon from the
 
 ## How can I install custom packages?
 
-You are free to install any additional packages available through conda by [creating a conda environment](#how-do-i-create-a-conda-environment), or by running [`conda install`](https://docs.conda.io/projects/conda/en/latest/commands/install.html) commands within your custom environment. These packages will persist for you. You may also use `conda install` directly in the `(notebook)` environment provided by default, but these packages won't be permanent and will be wiped anytime your server restarts.
+You are free to install any additional packages available through conda by [creating a conda environment](#how-do-i-create-a-conda-environment), or by running [conda install 'package'](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/installing-with-conda.html) commands within your custom environment. These packages will persist for you. You may also use `conda install` directly in the `(notebook)` environment provided by default, but these packages won't be permanent and will be wiped anytime your server restarts.
 
-TODO: Add documentation on how octave, sagemath, julia pkg managers work. Note that `pip install --user` would persist.
-
-You may also request packages to be installed for everyone in the default environment. This is useful if you think most LibreTexts users would benefit from a package, or if you're running a class with many students who need the package by default. In that case, please [email us](mailto:jupyterteam@ucdavis.edu).
-
+For packages not available through conda or for languages which have their own package manager such as SageMath and Julia, we suggest that you [email us](mailto:jupyterteam@ucdavis.edu) to provide them for you by default in the environment. Packages must be installed to the `/home/jovyan/` directory to persist and Jula and SageMath do not install there by default. For Instructors wanting to use custom packages for their class, [you'll probably want to email us as well](#how-do-i-set-up-custom-environments-for-my-class).
 ## How do I create a Conda environment?
 
 The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.
