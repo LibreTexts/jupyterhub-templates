@@ -16,8 +16,13 @@ END = '''</section>
 <link rel="stylesheet" href="{{ static_url("external/css/faq.css") }}" type="text/css"/>
 {% endblock stylesheet %}
 '''
+alphanumaspace="abcdefghijklmnopqrstuvwxyz0123456789 "
 
 class JupyterHubTemplateRenderer(mistune.Renderer):
+    def header(self, text, level, raw=None):
+        # render and add in an anchor
+        anchor = "".join([c if c != ' ' else '-' for c in text.lower() if c in alphanumaspace])
+        return '<h%d id="%s">%s</h%d>\n'%(level, anchor, text, level)
     def image(self, src, title, text):
         # if not an external image, use the static_url template function
         # doing it the lazy way and just checking if / is in the name
