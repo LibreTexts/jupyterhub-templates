@@ -1,14 +1,25 @@
-## How do I access RStudio?
+# On this page (create a table of contents here with anchors):
 
-To open an RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (ctrl+shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.
 
-![RStudio Launcher icon](RStudio-launcher.png)
+- Which environment should I choose?
+- How do I access RStudio?
+- How can I install custom packages?
+- How do I create a Conda environment?
+- What is a Jupyter kernel?
+- How do I restart my JupyterLab server?
+- Can I recieve announcements about downtime for jupyter.libretexts.org?
 
-## What do I need to know about the new environment?
+## For Instructors
 
-Most of the packages are at their latest version as of August 2020.
+- How do I distribute files to students?
+- How do I set up custom environments for my class?
 
-Most notably, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:
+
+## Which environment should I choose?
+
+After logging in to JupyterHub, you will be taken to a Server Options page where you may select your JupyterLab evironment. This will determine the languages, packages, and kernels available to you. You should continue with whichever option is selected by default unless you have a specific reason to do otherwise.
+
+The New Default Environment is what most users should choose for general JupyterLab use. It is an updated version of what is now called Legacy Default Environment. In this new environment, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:
 
 | Language | Old version | New version |
 | - | - | - |
@@ -19,37 +30,33 @@ Most notably, all supported languages except for Octave and C++ have been upgrad
 | C++ (cling) | 0.6 | 0.6 |
 | SageMath | 8.1 | 9.1 |
 
-In addition, almost all Python packages have been upgraded to a newer version. They should be backwards compatible, but you should still test your existing code to make sure they work with the newer packages.
-
-Several packages have been removed in our new image, which are listed below. Also see [How can I permanently install additional packages?]().
+Most of the packages included in this New Default Environment are at their latest version as of August 2020. Compared to the legacy environment, a few packages have been removed in this new environment, which are listed below. 
 
 - pymol and ipymol: Requires extra conda channels and is not free software. Can be installed manually in a new conda environment.
 - opty: Requires Python <=3.6. Can be installed manually in a new conda environment with Python 3.6.
 - rpy2: Requires R <= 4.0. Can be installed manually in a new conda environemt with R 3.6.
 
-To ease this transition, our old image will still be listed as an option when you login to JupyterHub, and it will be supported until December 31st, 2020 (?). Please email us at [jupyterteam@ucdavis.edu](mailto:jupyterteam@ucdavis.edu) if you have concerns or issues with the new environment.
+If you require the above packages or older versions of existing ones, you should use the legacy environment or [create a conda environment](#how-do-i-create-a-conda-environment) with your custom package versions. Please email us at [jupyterteam@ucdavis.edu](mailto:jupyterteam@ucdavis.edu) if you have concerns or issues with the new environment.
 
-## How do I restart my JupyterLab server?
+## How do I access RStudio?
 
-On the Libretexts JupyterHub, you spawn servers to provide you with JupyterLab software and you run your code using kernels. If you are actively running code and something unexpected occurs, [restarting the kernel](#What is a Jupyter kernel?) can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server. 
+To open the RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (Ctrl+Shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.
 
-Go to File->Hub Control Panel and you will be brought to a page with "Stop Server" and "My Server" buttons. Press Stop Server and you should see that that My Server button will dim; this means that the server is stopping. When the server has stopped (this should take less than 15 seconds), the webpage will prompt you with a "Start My Server" option. Press it, launch the server, and then you will be brought back to the Server Options page. Proceed with the environment of your choice, and you will now have a fresh server.
+![RStudio Launcher icon](RStudio-launcher.png)
 
-By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your `/home/jovyan` directory. Think of these user files as being stored in a cloud, and each time you log in to the Hub, we provide you with a brand new server which has downloaded those files. For more detailed information on how your files are stored, see the documentation [here](https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it) 
+## How can I install custom packages?
 
-## Can I install additional packages?
-
-You are free to install any additional packages available through conda by [creating a conda environment](#how-do-i-create-a-persistent-conda-environment). These packages will persist for you. You may also use `conda install` directly without creating an environment, but these packages won't be permanent and will be wiped anytime your server restarts.
+You are free to install any additional packages available through conda by [creating a conda environment](#how-do-i-create-a-conda-environment), or by running [`conda install`](https://docs.conda.io/projects/conda/en/latest/commands/install.html) commands within your custom environment. These packages will persist for you. You may also use `conda install` directly in the `(notebook)` environment provided by default, but these packages won't be permanent and will be wiped anytime your server restarts.
 
 TODO: Add documentation on how octave, sagemath, julia pkg managers work. Note that `pip install --user` would persist.
 
 You may also request packages to be installed for everyone in the default environment. This is useful if you think most LibreTexts users would benefit from a package, or if you're running a class with many students who need the package by default. In that case, please [email us](mailto:jupyterteam@ucdavis.edu).
 
-## How do I create a persistent Conda environment?
+## How do I create a Conda environment?
 
 The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.
 
-1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (ctrl+shift+L) and select terminal from the 'other' section.
+1. In the top left corner, open a terminal by going to File->New->Terminal or open a New Launcher (Ctrl+Shift+L) and select terminal from the 'other' section.
 
   ![Finding the Terminal](terminal.png)
 
@@ -58,9 +65,9 @@ Below is an example that creates an environment called `scipkg`, which contains 
 
   ![Conda Create command](conda-create.png)
 
-  *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation by pressing `y` or by initially running `conda create` with a `-y` flag at the end.*
+  *Do not worry if you recieve a warning about newer versions of conda when running the `conda create` command. Just proceed through the installation when prompted by pressing `y` or by initially running `conda create` with a `-y` flag at the end.*
 
-3. Activate your environment using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
+3. After the environment has been built, activate it using `conda activate your_env_name`. You should now see `(your_env_name)` at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run `conda deactivate`.
 
   ![Conda Activate command](conda-activate.png)
 
@@ -72,9 +79,9 @@ Below is an example that creates an environment called `scipkg`, which contains 
 
   ![Notebook environment](notebook.png) 
 
-5. Now your conda environment is created! You may access it in the terminal by `conda activate 'your_env_name'` or as a notebook from the launcher at any time. 
+5. Now your conda environment is created! You may access it in the terminal by `conda activate 'your_env_name'` or as a notebook from the launcher. 
 
-Note that if you want to use your environment with a Jupyter notebook, you must install a [Jupyter kernel](#what-is-a-jupyter-kernel) along with your packages. Here's a list of common languages and their kernels:
+Note that if you want to use your environment with a Jupyter notebook, you must install a [Jupyter kernel](#what-is-a-jupyter-kernel) along with your packages. Here's a list of common languages and their kernels which are supported through conda:
 
 | Language | Jupyter kernel |
 | - | - |
@@ -87,9 +94,17 @@ You may view all your created conda environments using `conda env list`. To remo
 
 ## What is a Jupyter kernel?
 
-Jupyter kernels are language specific [managing kernels](https://jupyterlab.readthedocs.io/en/stable/user/running.html)
+Jupyter kernels are the backend code which allow you to execute the code you write within Jupyter software like notebooks and consoles. For instance, if you have ever used JupyterLab locally for python programming then you have made use of the [ipython kernel](https://ipython.org/). Kernels are what change your notebook from a static text page to interactable programming shells. This is why you must include a kernel in your conda environment to run the environment as a notebook.
 
-TODO finish
+Kernels have a runtime which is independent of any given notebook, console, or terminal, and you can find more about [managing kernels](https://jupyterlab.readthedocs.io/en/stable/user/running.html) from the official JupyterLab documentation. You generally should not have to worry about stopping and restarting kernels, but it may be useful for certain debugging purposes. A full list of Jupyter Kernels is available [here](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).
+
+## How do I restart my JupyterLab server?
+
+On Libretexts JupyterHub, you spawn servers that provide you with JupyterLab software and you execute your code using kernels. If you are actively running code and something unexpected occurs, [restarting the kernel](https://jupyterlab.readthedocs.io/en/stable/user/running.html) can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server. 
+
+Go to File->Hub Control Panel and you will be brought to a page with "Stop Server" and "My Server" buttons. Press Stop Server and you should see that that the My Server button will dim; this means that the server is stopping. When the server has stopped (this should take less than 15 seconds), the webpage will prompt you with a "Start My Server" option. Press it, launch the server, and then you will be brought back to the Server Options page. Proceed with the environment of your choice, and you will now have a fresh server.
+
+By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your `/home/jovyan` directory; everything else will be wiped. Think of these user files as being stored in a cloud, and each time you start JupyterLab, we provide you with a brand new server which has downloaded your specific files. For more technical information on how your files are stored, see the Jupyterhub for Kubernetes documentation [here](https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it). 
 
 ## Can I recieve accouncements for downtime and other critical information about jupyter.libretexts.org?
 
