@@ -29,7 +29,7 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
         if level == 1:
             self.toc += '<h2>%s</h2>\n'%text
         elif level == 2:
-            self.toc += '<h3><a href="#%s">%s</a></h3>\n'%(anchor, text)
+            self.toc += '<li><a href="#%s">%s</a></li>\n'%(anchor, text)
         return '<h%d id="%s">%s</h%d>\n'%(level, anchor, text, level)
 
     def image(self, src, title, text):
