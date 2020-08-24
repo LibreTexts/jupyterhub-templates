@@ -6,7 +6,7 @@ START = '''{% extends "page.html" %}
 
 {% block main %}
 <h1>Frequently Asked Questions</h1>
-<section id="faq">
+<section id="faq" class="container">
 '''
 END = '''</section>
 {% endblock main %}
