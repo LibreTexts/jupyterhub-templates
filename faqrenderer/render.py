@@ -21,7 +21,7 @@ alphanumaspace="abcdefghijklmnopqrstuvwxyz0123456789 "
 class JupyterHubTemplateRenderer(mistune.Renderer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.toc = "<h1>On this page:</h1>\n"
+        self.toc = "<h1>On this page:</h1>\n<ul>\n"
 
     def header(self, text, level, raw=None):
         # render and add in an anchor
@@ -53,7 +53,7 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
         return '%s>' % html
 
     def table_of_contents(self):
-        return "<ul>\n%s\n</ul>\n"%self.toc
+        return toc + "</ul>\n"
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
