@@ -27,7 +27,7 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
         # render and add in an anchor
         anchor = "".join([c if c != ' ' else '-' for c in text.lower() if c in alphanumaspace])
         if level == 1:
-            self.toc += '<h2>%s</h2>\n'%(anchor, text)
+            self.toc += '<h2>%s</h2>\n'%text
         elif level == 2:
             self.toc += '<h3><a href="#%s">%s</a></h3>\n'%(anchor, text)
         return '<h%d id="%s">%s</h%d>\n'%(level, anchor, text, level)
