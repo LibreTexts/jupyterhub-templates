@@ -53,7 +53,7 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
         return '%s>' % html
 
     def table_of_contents(self):
-        return toc + "</ul>\n"
+        return self.toc + "</ul>\n"
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
