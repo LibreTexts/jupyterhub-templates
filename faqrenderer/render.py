@@ -19,10 +19,19 @@ END = '''</section>
 alphanumaspace="abcdefghijklmnopqrstuvwxyz0123456789 "
 
 class JupyterHubTemplateRenderer(mistune.Renderer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.toc = "<h1>On this page:</h1>\n"
+
     def header(self, text, level, raw=None):
         # render and add in an anchor
         anchor = "".join([c if c != ' ' else '-' for c in text.lower() if c in alphanumaspace])
+        if level == 1:
+            self.toc += '<h2>%s</h2>\n'%(anchor, text)
+        elif level == 2:
+            self.toc += '<h3><a href="#%s">%s</a></h3>\n'%(anchor, text)
         return '<h%d id="%s">%s</h%d>\n'%(level, anchor, text, level)
+
     def image(self, src, title, text):
         # if not an external image, use the static_url template function
         # doing it the lazy way and just checking if / is in the name
@@ -43,6 +52,8 @@ class JupyterHubTemplateRenderer(mistune.Renderer):
             return '%s />' % html
         return '%s>' % html
 
+    def table_of_contents(self):
+        return "<ul>\n%s\n</ul>\n"%self.toc
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -51,5 +62,7 @@ if __name__ == "__main__":
         fn = sys.argv[1]
     with open(fn) as f:
         md = f.read()
-    html = mistune.Markdown(JupyterHubTemplateRenderer()).parse(md)
-    print(START + html + END)
+    renderer = JupyterHubTemplateRenderer()
+    html = mistune.Markdown(renderer).parse(md)
+    toc = renderer.table_of_contents()
+    print(START + toc + html + END)
