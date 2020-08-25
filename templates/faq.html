@@ -3,24 +3,22 @@
 {% block main %}
 <h1>Frequently Asked Questions</h1>
 <section id="faq" class="container">
-<h1 id="on-this-page-create-a-table-of-contents-here-with-anchors">On this page (create a table of contents here with anchors):</h1>
+<h1>On this page:</h1>
 <ul>
-<li>Which environment should I choose?</li>
-<li>How do I access RStudio?</li>
-<li>How can I install custom packages?</li>
-<li>How do I create a Conda environment?</li>
-<li>What is a Jupyter kernel?</li>
-<li>How do I restart my JupyterLab server?</li>
-<li>Can I recieve announcements about downtime for jupyter.libretexts.org?</li>
+<li><a href="#which-jupyterlab-environment-should-i-choose">Which JupyterLab environment should I choose?</a></li>
+<li><a href="#how-do-i-access-rstudio">How do I access RStudio?</a></li>
+<li><a href="#how-can-i-install-custom-packages">How can I install custom packages?</a></li>
+<li><a href="#how-do-i-create-a-conda-environment">How do I create a Conda environment?</a></li>
+<li><a href="#what-is-a-jupyter-kernel">What is a Jupyter kernel?</a></li>
+<li><a href="#how-do-i-restart-my-jupyterlab-server">How do I restart my JupyterLab server?</a></li>
+<li><a href="#can-i-recieve-accouncements-for-downtime-and-other-critical-information-about-libretextsuc-davis-jupyterhub">Can I recieve accouncements for downtime and other critical information about LibreTexts/UC Davis JupyterHub?</a></li>
+<h2>For Instructors</h2>
+<li><a href="#how-do-i-set-up-custom-jupyter-environments-for-my-class">How do I set up custom Jupyter environments for my class?</a></li>
 </ul>
-<h2 id="for-instructors">For Instructors</h2>
-<ul>
-<li>How do I distribute files to students?</li>
-<li>How do I set up custom environments for my class?</li>
-</ul>
-<h2 id="which-environment-should-i-choose">Which environment should I choose?</h2>
+<h2 id="which-jupyterlab-environment-should-i-choose">Which JupyterLab environment should I choose?</h2>
 <p>After logging in to JupyterHub, you will be taken to a Server Options page where you may select your JupyterLab evironment. This will determine the languages, packages, and kernels available to you. You should continue with whichever option is selected by default unless you have a specific reason to do otherwise.</p>
-<p>The New Default Environment is what most users should choose for general JupyterLab use. It is an updated version of what is now called Legacy Default Environment. In this new environment, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:</p>
+<p>Each Jupyterhub environment is a different <a href="https://www.quora.com/What-are-Docker-Images">Docker image</a> that contains all the packages, languages, and kernels you need. Docker images are basically snapshots of an entire computer system, so you are being served the exact same system state each time you boot a Jupyter environment, plus your personal files.</p>
+<p>The <strong>New Default Environment</strong> is what most users should choose for general JupyterLab use. It is an updated version of what is now called <strong>Legacy Default Environment</strong>. In the new environment, all supported languages except for Octave and C++ have been upgraded. Depending on the language, some syntax might have changed, so be sure to test your code to see if it works on a newer version. Here's a list of all the languages we support and the version changes:</p>
 <table>
 <thead><tr>
 <th>Language</th>
@@ -61,42 +59,43 @@
 </tr>
 </tbody>
 </table>
-<p>Most of the packages included in this New Default Environment are at their latest version as of August 2020. Compared to the legacy environment, a few packages have been removed in this new environment, which are listed below.</p>
+<p>Most of the packages included in this <strong>New Default Environment</strong> are at their latest version as of August 2020. Compared to <strong>Legacy Default Environment</strong>, a few packages have been removed in this new environment, which are listed below.</p>
 <ul>
-<li>pymol and ipymol: Requires extra conda channels and is not free software. Can be installed manually in a new conda environment.</li>
+<li>pymol and ipymol: Requires extra conda channels and is not entirely open source software. Can be installed manually in a new conda environment.</li>
 <li>opty: Requires Python &lt;=3.6. Can be installed manually in a new conda environment with Python 3.6.</li>
 <li>rpy2: Requires R &lt;= 4.0. Can be installed manually in a new conda environemt with R 3.6.</li>
 </ul>
-<p>If you require the above packages or older versions of existing ones, you should use the legacy environment or <a href="#how-do-i-create-a-conda-environment">create a conda environment</a> with your custom package versions. Please email us at <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a> if you have concerns or issues with the new environment.</p>
+<p>If you require the above packages or older versions of existing ones, you should use <strong>Legacy Default Environment</strong> or <a href="#how-do-i-create-a-conda-environment">create a conda environment</a> with your custom package versions. Please email us at <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a> if you have concerns or issues with the new environment.</p>
 <h2 id="how-do-i-access-rstudio">How do I access RStudio?</h2>
 <p>To open the RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (Ctrl+Shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.</p>
 <p><img src="{{ static_url("external/images/faq/RStudio-launcher.png") }}" alt="RStudio Launcher icon"></p>
 <h2 id="how-can-i-install-custom-packages">How can I install custom packages?</h2>
-<p>You are free to install any additional packages available through conda by <a href="#how-do-i-create-a-conda-environment">creating a conda environment</a>, or by running <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/installing-with-conda.html">conda install 'package'</a> commands within your custom environment. These packages will persist for you. You may also use <code>conda install</code> directly in the <code>(notebook)</code> environment provided by default, but these packages won't be permanent and will be wiped anytime your server restarts.</p>
-<p>For packages not available through conda or for languages which have their own package manager such as SageMath and Julia, we suggest that you <a href="mailto:jupyterteam@ucdavis.edu">email us</a> to provide them for you by default in the environment. Packages must be installed to the <code>/home/jovyan/</code> directory to persist and Jula and SageMath do not install there by default. For Instructors wanting to use custom packages for their class, <a href="#how-do-i-set-up-custom-environments-for-my-class">you'll probably want to email us as well</a>.</p>
+<p>You are free to install any additional packages available through conda's <a href="https://conda-forge.org/feedstocks/">conda-forge channel</a> by <a href="#how-do-i-create-a-conda-environment">creating a conda environment</a>, or by running <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/installing-with-conda.html">conda install <package></a> commands within your custom conda environment. These packages will persist for you. You may also use <code>conda install</code> directly in the <code>(notebook)</code> conda environment provided by default, but these packages won't be permanent and will be wiped anytime your server restarts.</p>
+<p>For packages not available through conda or for languages which have their own package manager such as SageMath and Julia, we suggest that you <a href="mailto:jupyterteam@ucdavis.edu">email us</a> to provide them for you by default in the Jupyterhub environment. Packages must be installed to the <code>/home/jovyan/</code> directory to persist and Jula and SageMath do not install there by default. For Instructors wanting to use custom packages for their class, <a href="#how-do-i-set-up-custom-environments-for-my-class">you'll probably want to email us as well</a>.</p>
+<p>(need to specify that we only support apt 18.04 etc)</p>
 <h2 id="how-do-i-create-a-conda-environment">How do I create a Conda environment?</h2>
-<p>The best way to permanently install new packages onto your account is through conda environments. Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.</p>
+<p>The best way to permanently install new packages onto your account is through conda environments. <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">Conda environments</a> are file directories which contain isolated collections of packages that you can install with the conda package manager (available by default in all our Jupyterhub environments). Using conda environments, you may also build Jupyter notebooks and consoles which contain only the programming language and packages that you need. Follow the steps below to create one.</p>
 <ol>
 <li><p>In the top left corner, open a terminal by going to File-&gt;New-&gt;Terminal or open a New Launcher (Ctrl+Shift+L) and select terminal from the 'other' section.</p>
 <p><img src="{{ static_url("external/images/faq/terminal.png") }}" alt="Finding the Terminal"></p>
 </li>
-<li><p>Within the terminal, use the command <code>conda create -n 'your_env_name' 'kernel' 'packages'</code> to create your environment.
+<li><p>Within the terminal, use the command <code>conda create -n &lt;your_env_name&gt; &lt;kernel&gt; &lt;packages&gt;</code> to create your environment.
 Below is an example that creates an environment called <code>scipkg</code>, which contains the <code>ipykernel</code> kernel along with the python packages <code>numpy</code>, <code>pandas</code> and <code>matplotlib</code>. In general, you may include any packages which are available through conda.</p>
 <p><img src="{{ static_url("external/images/faq/conda-create.png") }}" alt="Conda Create command"></p>
 <p><em>Do not worry if you recieve a warning about newer versions of conda when running the <code>conda create</code> command. Just proceed through the installation when prompted by pressing <code>y</code> or by initially running <code>conda create</code> with a <code>-y</code> flag at the end.</em></p>
 </li>
-<li><p>After the environment has been built, activate it using <code>conda activate your_env_name</code>. You should now see <code>(your_env_name)</code> at the beginning of the terminal prompt. This indicates that the environment is active. Note that the environment will only be active within that specific terminal session. To deactivate, run <code>conda deactivate</code>.</p>
+<li><p>After the conda environment has been built, activate it using <code>conda activate &lt;your_env_name&gt;</code>. You should now see <code>(your_env_name)</code> at the beginning of the terminal prompt. This indicates that the conda environment is active. Note that the conda environment will only be active within that specific terminal session. To deactivate, run <code>conda deactivate</code>.</p>
 <p><img src="{{ static_url("external/images/faq/conda-activate.png") }}" alt="Conda Activate command"></p>
 </li>
-<li><p>If you specified a Jupyter kernel then you may run your environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your environment from there. Using the <code>scipkg</code> example, the environment will appear as <code>Python [conda env:.conda-scipkg]</code>. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.</p>
+<li><p>If you specified a Jupyter kernel then you may run your conda environment as a Jupyter notebook or console. Open the launcher (Ctrl+Shift+L) and select your conda environment from there. Using the <code>scipkg</code> example, the environment will appear as <code>Python [conda env:.conda-scipkg]</code>. You may have to wait a little bit for the icon to appear; refresh the webpage if needed.</p>
 <p><img src="{{ static_url("external/images/faq/env-launcher.png") }}" alt="Launch the conda environment"></p>
-<p>Once the notebook opens, you can verify that you are using the proper environment by looking in the top right corner;</p>
+<p>Once the notebook opens, you can verify that you are using the proper conda environment by looking in the top right corner;</p>
 <p><img src="{{ static_url("external/images/faq/notebook.png") }}" alt="Notebook environment"></p>
 </li>
-<li><p>Now your conda environment is created! You may access it in the terminal by <code>conda activate 'your_env_name'</code> or as a notebook from the launcher.</p>
+<li><p>Now your conda environment is created! You may access it in the terminal by <code>conda activate &lt;your_env_name&gt;</code> or as a notebook from the launcher.</p>
 </li>
 </ol>
-<p>Note that if you want to use your environment with a Jupyter notebook, you must install a <a href="#what-is-a-jupyter-kernel">Jupyter kernel</a> along with your packages. Here's a list of common languages and their kernels which are supported through conda:</p>
+<p>Note that if you want to use your conda environment as a Jupyter notebook, you must install a <a href="#what-is-a-jupyter-kernel">Jupyter kernel</a> along with your packages. Here's a list of common languages and their kernels which are supported through conda:</p>
 <table>
 <thead><tr>
 <th>Language</th>
@@ -122,20 +121,20 @@ Below is an example that creates an environment called <code>scipkg</code>, whic
 </tr>
 </tbody>
 </table>
-<p>You may view all your created conda environments using <code>conda env list</code>. To remove an environment, use <code>conda env remove -n your_env_name</code>. For reference, all of your created environments are stored in <code>/home/jovyan/.conda/envs/</code>. You can learn more about <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">managing environments</a> and <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">more conda commands</a> from the linked documentation.</p>
+<p>You may view all your created conda environments using <code>conda env list</code>. To remove an environment, use <code>conda env remove -n &lt;your_env_name&gt;</code>. For reference, all of your created environments are stored in <code>/home/jovyan/.conda/envs/</code>. You can learn more about <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">managing and creating conda environments</a> and <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">more conda commands</a> from the linked documentation.</p>
+<p>(need to specify user storage, currently 2GB)</p>
 <h2 id="what-is-a-jupyter-kernel">What is a Jupyter kernel?</h2>
-<p>Jupyter kernels are the backend code which allow you to execute the code you write within Jupyter software like notebooks and consoles. For instance, if you have ever used JupyterLab locally for python programming then you have made use of the <a href="https://ipython.org/">ipython kernel</a>. Kernels are what change your notebook from a static text page to interactable programming shells. This is why you must include a kernel in your conda environment to run the environment as a notebook.</p>
-<p>Kernels have a runtime which is independent of any given notebook, console, or terminal, and you can find more about <a href="https://jupyterlab.readthedocs.io/en/stable/user/running.html">managing kernels</a> from the official JupyterLab documentation. You generally should not have to worry about stopping and restarting kernels, but it may be useful for certain debugging purposes. A full list of Jupyter Kernels is available <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">here</a>.</p>
+<p>Jupyter kernels process the code you type and display the results to Jupyter notebook, console, or other tools. This typically means that each kernel supports a specific programming language and version, which is why you must include a kernel in your conda environment to run the environment as a notebook. As an example, if you have ever used JupyterLab locally for python programming then you have made use of the <a href="https://ipython.org/">ipython kernel</a>.</p>
+<p>Kernels have a runtime which is independent of any given notebook, console, or terminal, and you can find more about <a href="https://jupyterlab.readthedocs.io/en/stable/user/running.html">managing kernels</a> from the official JupyterLab documentation. You generally should not have to worry about stopping and restarting kernels, but it may be useful for certain debugging purposes. A full list of Jupyter Kernels is available <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">here</a>. If you'd like us to support any additional kernels, go ahead and <a href="mailto:jupyterteam@ucdavis.edu">email us</a>.</p>
 <h2 id="how-do-i-restart-my-jupyterlab-server">How do I restart my JupyterLab server?</h2>
-<p>On Libretexts JupyterHub, you spawn servers that provide you with JupyterLab software and you execute your code using kernels. If you are actively running code and something unexpected occurs, <a href="https://jupyterlab.readthedocs.io/en/stable/user/running.html">restarting the kernel</a> can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server.</p>
+<p>On LibreTexts/UC Davis JupyterHub, you spawn servers that provide you with JupyterLab software and you execute your code using kernels. If you are actively running code and something unexpected occurs, <a href="https://jupyterlab.readthedocs.io/en/stable/user/running.html">restarting the kernel</a> can often be an easy solution. However, sometimes the problem may be deeper than that, especially if some of your files were incorrectly modified. In this case, it could be a good idea to restart your server.</p>
 <p>Go to File-&gt;Hub Control Panel and you will be brought to a page with "Stop Server" and "My Server" buttons. Press Stop Server and you should see that that the My Server button will dim; this means that the server is stopping. When the server has stopped (this should take less than 15 seconds), the webpage will prompt you with a "Start My Server" option. Press it, launch the server, and then you will be brought back to the Server Options page. Proceed with the environment of your choice, and you will now have a fresh server.</p>
-<p>By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your <code>/home/jovyan</code> directory; everything else will be wiped. Think of these user files as being stored in a cloud, and each time you start JupyterLab, we provide you with a brand new server which has downloaded your specific files. For more technical information on how your files are stored, see the Jupyterhub for Kubernetes documentation <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it">here</a>.</p>
-<h2 id="can-i-recieve-accouncements-for-downtime-and-other-critical-information-about-jupyterlibretextsorg">Can I recieve accouncements for downtime and other critical information about jupyter.libretexts.org?</h2>
-<p>If you wish to recieve updates from the JupyterTeam about possible downtime for jupyter.libretexts.org, you can subscribe to our <a href="https://lists.ucdavis.edu/sympa/subscribe/flock-announce">mailing list</a>. Just enter your email and you will recieve emails whenever we notify Hub users about downtime and maintenance.</p>
+<p>By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your <code>/home/jovyan</code> directory; files stored in other locations will not be saved. Think of these <code>/home/jovyan</code> user files as being stored in a cloud, and each time you start JupyterLab, we provide you with a brand new server which has downloaded your specific files. For more technical information on how your files are stored, see the Jupyterhub for Kubernetes documentation <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it">here</a>.</p>
+<p>(user file backup schedule?)</p>
+<h2 id="can-i-recieve-accouncements-for-downtime-and-other-critical-information-about-libretextsuc-davis-jupyterhub">Can I recieve accouncements for downtime and other critical information about LibreTexts/UC Davis JupyterHub?</h2>
+<p>If you wish to recieve updates from the JupyterTeam about possible downtime for LibreTexts/UC Davis JupyterHub, you can subscribe to our <a href="https://lists.ucdavis.edu/sympa/subscribe/flock-announce">mailing list</a>. Just enter your email and you will recieve emails whenever we notify Hub users about downtime and maintenance.</p>
 <h1 id="for-instructors">For Instructors</h1>
-<h2 id="how-do-i-distribute-files-to-students">How do I distribute files to students?</h2>
-<p>You can distribute files using <a href="https://jupyterhub.github.io/nbgitpuller/index.html">nbgitpuller</a>. Please store your files in a GitHub repository and we can set up a custom environment that will update the files whenever a student spawns a server. This is a good option since students don't need to understand git, but keep in mind that nbgitpuller does have <a href="https://jupyterhub.github.io/nbgitpuller/topic/automatic-merging.html">some limitations</a>. Other options include hosting your files on an external site, like GitHub or Google Drive, where students can download them.</p>
-<h2 id="how-do-i-set-up-custom-environments-for-my-class">How do I set up custom environments for my class?</h2>
+<h2 id="how-do-i-set-up-custom-jupyter-environments-for-my-class">How do I set up custom Jupyter environments for my class?</h2>
 <p>If you are an instructor who wants to set up an environment with custom packages and kernels for your course, please let us know by emailing us at jupyterteam@ucdavis.edu. It would also help if you can create one of the following to let us know your exact needs:</p>
 <ul>
 <li>A repository supported by <a href="https://repo2docker.readthedocs.io/">repo2docker</a> that lists your desired packages. Supported configuration files are listed <a href="https://repo2docker.readthedocs.io/en/latest/config_files.html">here</a>.</li>
