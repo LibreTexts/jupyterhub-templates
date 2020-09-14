@@ -15,6 +15,8 @@ The **New Default Environment** is what most users should choose for general Jup
 | C++ (cling) | 0.6 | 0.6 |
 | SageMath | 8.1 | 9.1 |
 
+*Starting with R 4.0, there has been a [change to the behavior of data.frame() and read.table() calls](https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/index.html). To maintain compatibility with previous code, you will want to add a `stringsAsFactors=TRUE` parameter to each of your data.frame() and read.table() calls.*
+
 Most of the packages included in this **New Default Environment** are at their latest version as of August 2020. Compared to **Legacy Default Environment**, a few packages have been removed in this new environment, which are listed below. 
 
 - pymol and ipymol: Requires extra conda channels and is not entirely open source software. Can be installed manually in a new conda environment.
