@@ -10,7 +10,7 @@ The **New Default Environment** is what most users should choose for general Jup
 | - | - | - |
 | Python | 3.6 | 3.7.8 |
 | R | 3.6.1 | 4.0.2 |
-| Julia | 1.1.0 | 1.5.0 |
+| Julia | 1.1.0 | 1.5.1 |
 | Octave | 4.2.2 | 4.2.2 |
 | C++ (cling) | 0.6 | 0.6 |
 | SageMath | 8.1 | 9.1 |
