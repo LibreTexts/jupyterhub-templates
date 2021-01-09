@@ -10,6 +10,12 @@ The `static` folder contains CSS files and images used by the pages. This should
 
 The `faqrenderer` folder contains the FAQ markdown file and a Python script that generates `templates/faq.html`, so we don't have to write HTML by hand for the FAQ.
 
+# Making Changes
+
+Assuming all the JupyterHub configuration is set up on the cluster, making changes is as simple as:
+1. Make your changes and get them on the master branch. This can be done by either committing straight to the branch or by making a new branch and merging.
+1. While on a management node, restart the JupyterHub pod. The easiest way to do this would be to delete the pod and let k8s respawn it on its own.
+
 # Usage
 
 Two things need to be setup for this to work:
