@@ -12,8 +12,9 @@
 <li><a href="#what-is-a-jupyter-kernel">What is a Jupyter kernel?</a></li>
 <li><a href="#how-do-i-restart-my-jupyterlab-server">How do I restart my JupyterLab server?</a></li>
 <li><a href="#can-i-recieve-accouncements-for-downtime-and-other-critical-information-about-libretextsuc-davis-jupyterhub">Can I recieve accouncements for downtime and other critical information about LibreTexts/UC Davis JupyterHub?</a></li>
-<h2>For Instructors</h2>
+<h2>For instructors and their students</h2>
 <li><a href="#how-do-i-distribute-files-to-students">How do I distribute files to students?</a></li>
+<li><a href="#how-do-i-downloadupload-files-to-my-account">How do I download/upload files to my account?</a></li>
 </ul>
 <h2 id="which-jupyterlab-environment-should-i-choose">Which JupyterLab environment should I choose?</h2>
 <p>After logging in to JupyterHub, you will be taken to a Server Options page where you may select your JupyterLab evironment. This will determine the languages, packages, and kernels available to you. You should continue with whichever option is selected by default unless you have a specific reason to do otherwise.</p>
@@ -132,9 +133,14 @@ Below is an example that creates an environment called <code>scipkg</code>, whic
 <p>By default, your server will always shutdown after 1 hour of inactivity. All files which you wish to modify and save across restarts must be located in your <code>/home/jovyan</code> directory; files stored in other locations will not be saved. Think of these <code>/home/jovyan</code> user files as being stored in a cloud, and each time you start JupyterLab, we provide you with a brand new server which has downloaded your specific files. We backup these user files for disaster and recovery purposes, but you should preform your own backup service for version control as needed. For more technical information on how your files are stored, see the Jupyterhub for Kubernetes documentation <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/customizing/user-environment.html#about-user-storage-and-adding-files-to-it">here</a>.</p>
 <h2 id="can-i-recieve-accouncements-for-downtime-and-other-critical-information-about-libretextsuc-davis-jupyterhub">Can I recieve accouncements for downtime and other critical information about LibreTexts/UC Davis JupyterHub?</h2>
 <p>If you wish to recieve updates from the JupyterTeam about possible downtime for LibreTexts/UC Davis JupyterHub, you can subscribe to our <a href="https://lists.ucdavis.edu/sympa/subscribe/flock-announce">mailing list</a>. Just enter your email and you will recieve emails whenever we notify Hub users about downtime and maintenance.</p>
-<h1 id="for-instructors">For Instructors</h1>
+<h1 id="for-instructors-and-their-students">For instructors and their students</h1>
 <h2 id="how-do-i-distribute-files-to-students">How do I distribute files to students?</h2>
 <p>The easiest way to distribute files to students for use on JupyterHub is through <a href="https://jupyterhub.github.io/nbgitpuller/index.html">nbgitpuller</a>. Nbgitpuller works by creating a link which automatically pulls files from a git repository and downloads them to a student's JupyterHub account. Since we already have nbgitpuller installed, all you need to do is <a href="https://github.com/new">create a github repository</a> containing all the files you would like to share, and then fill in the <code>Git Repository URL</code> section of the <a href="https://jupyterhub.github.io/nbgitpuller/link?hub=https://jupyter.libretexts.org&amp;app=jupyterlab">nbgitpuller link generator</a> with the URL of that online repository. Afterwards, simply share the generated link with your students and when they click on it, all of the files within the repository will be downloaded to their JupyterHub account. There are some nuances to the download process, so check <a href="https://jupyterhub.github.io/nbgitpuller/topic/automatic-merging.html">this page</a> if you are experiencing unexpected problems. If you are uncertain how to create a github repository, you can try this <a href="https://kbroman.org/github_tutorial/pages/init.html">short tutorial</a>. If you have never used git before and don't feel comfortable learning, Google Drive also offers you a great way to share your files.</p>
+<h2 id="how-do-i-downloadupload-files-to-my-account">How do I download/upload files to my account?</h2>
+<ul>
+<li>most simple way is to use gui. mention file size limitations (if applicable)</li>
+<li>use curl/wget in terminal to download files from internet. Useful for downloading files that the instructor can host online. Give example command</li>
+</ul>
 </section>
 {% endblock main %}
 
