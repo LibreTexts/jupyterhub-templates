@@ -2,7 +2,7 @@
 
 This repository contains templates and files specific to our LibreTexts JupyterHub, whih customizes our login page and adds About and FAQ pages.
 
-# Directory structure
+## Directory structure
 
 The `templates` folder contains Jinja templates to be rendered by JupyterHub. This should be mounted in `/etc/jupyterhub/templates`.
 
@@ -10,7 +10,15 @@ The `static` folder contains CSS files and images used by the pages. This should
 
 The `faqrenderer` folder contains the FAQ markdown file and a Python script that generates `templates/faq.html`, so we don't have to write HTML by hand for the FAQ.
 
-# Usage
+## Making Changes
+
+Assuming all the JupyterHub configuration is set up on the cluster, making changes is as simple as:
+1. Make your changes and get them on the master branch. This can be done by either committing straight to the branch or by making a new branch and merging.
+1. While on a management node, restart the jhub hub pod. The easiest way to do this would be to delete the pod and let k8s respawn it on its own.
+
+To test things first through staging JupyterHub, the above steps could be repeated with slight alterations. Instead of pushing to master branch, push to the staging branch. Likewise, instead of restarting the jhub hub pod, restart the staging-jhub hub pod.
+
+## Usage
 
 Two things need to be setup for this to work:
 
@@ -68,12 +76,4 @@ hub:
       mountPath: /etc/jupyterhub/templates
     - name: custom-templates-static
       mountPath: /usr/local/share/jupyterhub/static/external
-```
-
-# FAQ Development
-
-To make changes to faq.html, you may write your changes to `/faqrenderer/faq.md`. To apply these to faq.html which is actually displayed online, navigate to the `/faqrenderer/` directory and run something like `python3 render.py > ../templates/faq.html`. This will update the faq.html file with your changes. Then, you may create a testing docker container to view your changes without having to restart the hub. Using the command below, be sure to replace each instance of `/your-working-directory/` with your actual directory path. The container is viewable at `localhost:8000`. Refresh the page anytime you make changes to the html. To see CSS and image changes, be sure to `shift+f5`. 
-
-```
-docker run -it -v /your-working-directory/jupyterhub-templates/static:/usr/local/share/jupyterhub/static/external -v /your-working-directory/jupyterhub-templates/templates:/etc/jupyterhub/templates -v /your-working-directory/jupyterhub-templates/faqrenderer/testrun.py:/srv/jupyterhub/jupyterhub_config.py -p 8000:8000 jupyterhub/jupyterhub jupyterhub --JupyterHub.template_paths=\"['/etc/jupyterhub/templates']\" --debug
 ```

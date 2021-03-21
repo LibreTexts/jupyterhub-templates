@@ -97,9 +97,12 @@ By default, your server will always shutdown after 1 hour of inactivity. All fil
 
 If you wish to recieve updates from the JupyterTeam about possible downtime for LibreTexts/UC Davis JupyterHub, you can subscribe to our [mailing list](https://lists.ucdavis.edu/sympa/subscribe/flock-announce). Just enter your email and you will recieve emails whenever we notify Hub users about downtime and maintenance.
 
-# For Instructors
+# For instructors and their students
 
 ## How do I distribute files to students?
 
 The easiest way to distribute files to students for use on JupyterHub is through [nbgitpuller](https://jupyterhub.github.io/nbgitpuller/index.html). Nbgitpuller works by creating a link which automatically pulls files from a git repository and downloads them to a student's JupyterHub account. Since we already have nbgitpuller installed, all you need to do is [create a github repository](https://github.com/new) containing all the files you would like to share, and then fill in the `Git Repository URL` section of the [nbgitpuller link generator](https://jupyterhub.github.io/nbgitpuller/link?hub=https://jupyter.libretexts.org&app=jupyterlab) with the URL of that online repository. Afterwards, simply share the generated link with your students and when they click on it, all of the files within the repository will be downloaded to their JupyterHub account. There are some nuances to the download process, so check [this page](https://jupyterhub.github.io/nbgitpuller/topic/automatic-merging.html) if you are experiencing unexpected problems. If you are uncertain how to create a github repository, you can try this [short tutorial](https://kbroman.org/github_tutorial/pages/init.html). If you have never used git before and don't feel comfortable learning, Google Drive also offers you a great way to share your files.
 
+## How do I download/upload files to my account?
+- The simplest way to upload files is through the built-in tool. With the File Browser tab selected, click on the Upload Files button. This will open a prompt to select the desired file to upload.
+- If the file is not available locally, the `curl` or `wget` commands can be used. To start, enter a terminal instance. To just download the file, the command usage for wget is `wget [link to file]`. For curl, it would be `curl [link to file] -o [output file name]`. Either of these will download the file into JupyterLab. It is encouraged to look into the greater functionalities of both tools to make the best use of them.
