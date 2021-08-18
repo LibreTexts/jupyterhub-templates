@@ -1,5 +1,7 @@
 {% extends "page.html" %}
 
+{% block title %}About{% endblock %}
+
 {% macro member(name, photo, title) %}
 <li class="member">
   <div class="member-avatar">
@@ -41,16 +43,6 @@
     {{ member("Kevin Krausse", "kevin.png", "Site Reliability Engineering Assistant") }}
   </ul>
 </section>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-921KMW3LME"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-921KMW3LME');
-</script>
 
 {% endblock main %}
 

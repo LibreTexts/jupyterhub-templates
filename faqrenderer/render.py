@@ -4,6 +4,8 @@ import sys
 
 START = '''{% extends "page.html" %}
 
+{% block title %}FAQ{% endblock %}
+
 {% block main %}
 <h1>Frequently Asked Questions</h1>
 <section id="faq" class="container">
