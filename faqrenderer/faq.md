@@ -27,9 +27,9 @@ If you require the above packages or older versions of existing ones, you should
 
 ## How do I access RStudio?
 
-To open the RStudio interface, you can select the RStudio notebook icon from the Jupyter Launcher (Ctrl+Shift+L). This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.
+To open the RStudio interface, you can select the RStudio environment in the server options window when first starting your JupyterLab server. This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.
 
-![RStudio Launcher icon](RStudio-launcher.png)
+![RStudio Launcher icon](rstudio.png)
 
 ## How can I install custom packages?
 
