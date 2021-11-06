@@ -15,11 +15,11 @@
 {% endmacro %}
 
 {% macro coursemac(courses, term) %}
-<h3>Courses for term {{ term }}</h3>
+<h3>{{ term }}</h3>
 <ul class="courses">
 {% for course in courses %}
 <li class="course">
-  <p>{{ course }}</p>
+  <div class="title">{{ course }}</div>
 </li>
 {% endfor -%}
 </ul>
@@ -35,12 +35,12 @@
 
 <section id="course" class="container">
   <h2>Courses Utilizing JupyterHub</h2>
-  {{ coursemac(["GEL 160", "STS 101"], "Fall 2019")}}
-  {{ coursemac(["GEL 56", "GEL 298"], "Spring 2020")}}
-  {{ coursemac(["GEL 56", "MAE 222", "STS 101"], "Fall 2020")}}
-  {{ coursemac(["GEL 240"], "Winter 2020")}}
-  {{ coursemac(["GEL 161"], "Spring 2021")}}
   {{ coursemac(["STA 106", "GEL 240"], "Fall 2021")}}
+  {{ coursemac(["GEL 161"], "Spring 2021")}}
+  {{ coursemac(["GEL 240"], "Winter 2020")}}
+  {{ coursemac(["GEL 56", "MAE 222", "STS 101"], "Fall 2020")}}
+  {{ coursemac(["GEL 56", "GEL 298"], "Spring 2020")}}
+  {{ coursemac(["GEL 160", "STS 101"], "Fall 2019")}}
 </section>
 
 <section id="member" class="container">

@@ -67,6 +67,11 @@ h2.subtitle {
   margin: 0 10px 10px;
 }
 
+#course ul.courses > li.course > .title {
+  font-size: 18px;
+  color: #bD4F2C;
+}
+
 /* Member Section */
 #member {
   padding: 20px 0 20px;
