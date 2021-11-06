@@ -14,7 +14,7 @@
 </li>
 {% endmacro %}
 
-{% macro course(courses, term) %}
+{% macro coursemac(courses, term) %}
 <h3>Courses for term {{ term }}</h3>
 <ul>
 {% for course in courses %}
@@ -36,7 +36,7 @@
 <section id="course" class="container">
   <h2>Courses Utilizing JupyterHub</h2>
   <div class="courses">
-    {{ course([GEL160, STS101], F2019)}}
+    {{ coursemac(["GEL160", "STS101"], "F2019")}}
   </div>
 </section>
 
