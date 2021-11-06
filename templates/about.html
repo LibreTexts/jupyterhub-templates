@@ -14,6 +14,17 @@
 </li>
 {% endmacro %}
 
+{% macro course(courses, term) %}
+<h3>Courses for term {{ term }}</h3>
+<ul>
+{% for course in courses %}
+<li>
+  <p>{{ course }}</p>
+</li>
+{% endfor -%}
+</ul>
+{% endmacro %}
+
 {% block main %}
 <section id="about" class="container">
   <h2>Jupyter Team</h2>
@@ -21,11 +32,18 @@
   <p>As part of a pioneering initiative at UC Davis, this JupyterHub equips LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students. Since LibreTexts has grown to being one of the largest open access textbook websites, this JupyterHub complements the plethora of educational texts available by providing the resources for learning through hands-on computing. Additionally, collaboration with the UC Davis Bioinformatics Core has made possible a dynamic and flexible environment that provides dual support for education and research.</p>
   <p>The groundwork for the foundation that has been built is through a broad set of open source software tools in many languages. Furthermore, given the ever-fluctuating changes and requirements when it comes to research, this JupyterHub brings forth a cross-disciplinary approach by allowing for powerful data analysis and computing to take place. Such a resource would not be possible without the expertise of students and faculty that began the project in February 2019 through grant support and collaboration with LibreTexts and the UC Davis Genome Center.</p>
 </section>
+
+<section id="course" class="container">
+  <h2>Courses Utilizing JupyterHub</h2>
+  <div class="courses">
+    {{ course([GEL160, STS101], F2019)}}
+  </div>
+</section>
+
 <section id="member" class="container">
   <h2>Current Team</h2>
   <ul class="members">
-    {{ member("Jason Moore", "jason.jpg", "Assistant Professor of Teaching") }}
-    {{ member("Richard Feltstykket", "richard.jpg", "Systems Administrator") }}
+    {{ member("Richard Feltstykket", "richard.jpg", "Chief Architect") }}
     {{ member("Noah Sanders", "noah.png", "Site Reliability Engineering Assistant") }}
     {{ member("Tim Stewart", "tim.png", "Site Reliability Engineering Assistant") }}
     {{ member("Mandeepika Saini", "mandeepika.jpg", "Site Reliability Engineering Assistant") }}
@@ -34,6 +52,7 @@
 
   <h2>Past Team Members</h2>
   <ul class="members">
+    {{ member("Jason Moore", "jason.jpg", "Assistant Professor of Teaching") }}
     {{ member("Kevin Rong", "kevin2.png", "Site Reliability Engineering Assistant") }}
     {{ member("Celine Liang", "celine.png", "Site Reliability Engineering Assistant") }}
     {{ member("Hao Huang", "hao.jpg", "Site Reliability Engineering Assistant") }}
