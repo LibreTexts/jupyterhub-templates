@@ -17,13 +17,17 @@ The **New Default Environment** is what most users should choose for general Jup
 
 *Starting with R 4.0, there has been a [change to the behavior of data.frame() and read.table() calls](https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/index.html). To maintain compatibility with previous code, you will want to add a `stringsAsFactors=TRUE` parameter to each of your data.frame() and read.table() calls.*
 
-Most of the packages included in this **New Default Environment** are at their latest version as of August 2020. Compared to **Legacy Default Environment**, a few packages have been removed in this new environment, which are listed below. 
+Most of the packages included in this **New Default Environment** are at their latest version. Compared to **Legacy Default Environment**, a few packages have been removed in this new environment, which are listed below. 
 
 - pymol and ipymol: Requires extra conda channels and is not entirely open source software. Can be installed manually in a new conda environment.
 - opty: Requires Python <=3.6. Can be installed manually in a new conda environment with Python 3.6.
 - rpy2: Requires R <= 4.0. Can be installed manually in a new conda environemt with R 3.6.
 
 If you require the above packages or older versions of existing ones, you should use **Legacy Default Environment** or [create a conda environment](#how-do-i-create-a-conda-environment) with your custom package versions. Please email us at [jupyterteam@ucdavis.edu](mailto:jupyterteam@ucdavis.edu) if you have concerns or issues with the new JupyterLab environment.
+
+## What packages are in the New Default Environment?
+
+The environment is generated from the [default environment repository](https://github.com/LibreTexts/default-env/). `apt.txt` is a list of all apt packages and `environment.yml` is a list of all conda and pip packages.
 
 ## How do I access RStudio?
 
