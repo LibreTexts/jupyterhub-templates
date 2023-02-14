@@ -2,6 +2,8 @@
 
 This repository contains templates and files specific to our LibreTexts JupyterHub, whih customizes our login page and adds About and FAQ pages.
 
+The original upstream templates can be found here: https://github.com/jupyterhub/jupyterhub/tree/main/share/jupyterhub/templates
+
 ## Directory structure
 
 The `templates` folder contains Jinja templates to be rendered by JupyterHub. This should be mounted in `/etc/jupyterhub/templates`.
