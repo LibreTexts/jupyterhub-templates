@@ -8,6 +8,7 @@
 <h1>On this page:</h1>
 <ul>
 <li><a href="#which-jupyterlab-environment-should-i-choose">Which JupyterLab environment should I choose?</a></li>
+<li><a href="#what-packages-are-in-the-new-default-environment">What packages are in the New Default Environment?</a></li>
 <li><a href="#how-do-i-access-rstudio">How do I access RStudio?</a></li>
 <li><a href="#how-can-i-install-custom-packages">How can I install custom packages?</a></li>
 <li><a href="#how-do-i-create-a-conda-environment">How do I create a Conda environment?</a></li>
@@ -63,13 +64,15 @@
 </tbody>
 </table>
 <p><em>Starting with R 4.0, there has been a <a href="https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/index.html">change to the behavior of data.frame() and read.table() calls</a>. To maintain compatibility with previous code, you will want to add a <code>stringsAsFactors=TRUE</code> parameter to each of your data.frame() and read.table() calls.</em></p>
-<p>Most of the packages included in this <strong>New Default Environment</strong> are at their latest version as of August 2020. Compared to <strong>Legacy Default Environment</strong>, a few packages have been removed in this new environment, which are listed below.</p>
+<p>Most of the packages included in this <strong>New Default Environment</strong> are at their latest version. Compared to <strong>Legacy Default Environment</strong>, a few packages have been removed in this new environment, which are listed below.</p>
 <ul>
 <li>pymol and ipymol: Requires extra conda channels and is not entirely open source software. Can be installed manually in a new conda environment.</li>
 <li>opty: Requires Python &lt;=3.6. Can be installed manually in a new conda environment with Python 3.6.</li>
 <li>rpy2: Requires R &lt;= 4.0. Can be installed manually in a new conda environemt with R 3.6.</li>
 </ul>
 <p>If you require the above packages or older versions of existing ones, you should use <strong>Legacy Default Environment</strong> or <a href="#how-do-i-create-a-conda-environment">create a conda environment</a> with your custom package versions. Please email us at <a href="mailto:jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a> if you have concerns or issues with the new JupyterLab environment.</p>
+<h2 id="what-packages-are-in-the-new-default-environment">What packages are in the New Default Environment?</h2>
+<p>The environment is generated from the <a href="https://github.com/LibreTexts/default-env/">default environment repository</a>. <code>apt.txt</code> is a list of all apt packages and <code>environment.yml</code> is a list of all conda and pip packages.</p>
 <h2 id="how-do-i-access-rstudio">How do I access RStudio?</h2>
 <p>To open the RStudio interface, you can select the RStudio environment in the server options window when first starting your JupyterLab server. This will open a new JupyterLab tab which has an RStudio interface and access to all the same packages you would find elsewhere on your account.</p>
 <p><img src="{{ static_url("external/images/faq/rstudio.png") }}" alt="RStudio Launcher icon"></p>

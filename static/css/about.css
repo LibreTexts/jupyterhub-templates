@@ -42,6 +42,36 @@ h2.subtitle {
   }
 }
 
+/* Courses Section */
+#course {
+  padding: 20px 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#course ul.courses {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#course ul.courses > li.course {
+  width: calc(50% - 20px);
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(45,36,65,0.08);
+  margin: 0 10px 10px;
+}
+
+#course ul.courses > li.course > .title {
+  font-size: 18px;
+  color: #bD4F2C;
+}
+
 /* Member Section */
 #member {
   padding: 20px 0 20px;

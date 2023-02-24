@@ -9,9 +9,23 @@
   </div>
   <div class="member-description">
     <div class="title">{{ name }}</div>
+    {# we disable autoescape to allow rendering of line breaks #}
+    {% autoescape false %}
     <div class="subtitle">{{ title }}</div>
+    {% endautoescape %}
   </div>
 </li>
+{% endmacro %}
+
+{% macro coursemac(courses, term) %}
+<h3>{{ term }}</h3>
+<ul class="courses">
+{% for course in courses %}
+<li class="course">
+  <div class="title">{{ course }}</div>
+</li>
+{% endfor -%}
+</ul>
 {% endmacro %}
 
 {% block main %}
@@ -21,20 +35,35 @@
   <p>As part of a pioneering initiative at UC Davis, this JupyterHub equips LibreTexts instructors and their students, as well as UC Davis faculty, staff, and students. Since LibreTexts has grown to being one of the largest open access textbook websites, this JupyterHub complements the plethora of educational texts available by providing the resources for learning through hands-on computing. Additionally, collaboration with the UC Davis Bioinformatics Core has made possible a dynamic and flexible environment that provides dual support for education and research.</p>
   <p>The groundwork for the foundation that has been built is through a broad set of open source software tools in many languages. Furthermore, given the ever-fluctuating changes and requirements when it comes to research, this JupyterHub brings forth a cross-disciplinary approach by allowing for powerful data analysis and computing to take place. Such a resource would not be possible without the expertise of students and faculty that began the project in February 2019 through grant support and collaboration with LibreTexts and the UC Davis Genome Center.</p>
 </section>
+
+<section id="course" class="container">
+  <h2>Courses Utilizing JupyterHub</h2>
+  <p>The UC Davis JupyterHub is free for use not only for students and instructors, but for courses as well. Anyone interested in utilizing JupyterHub for their class can contact <a href="jupyterteam@ucdavis.edu">jupyterteam@ucdavis.edu</a> for more information and to receive accommodations as necessary.</jupyterteam></p>
+  {{ coursemac(["STA 141A", "STA 207"], "Winter 2022")}}
+  {{ coursemac(["STA 106", "GEL 240"], "Fall 2021")}}
+  {{ coursemac(["GEL 161"], "Spring 2021")}}
+  {{ coursemac(["GEL 240"], "Winter 2020")}}
+  {{ coursemac(["GEL 56", "MAE 222", "STS 101"], "Fall 2020")}}
+  {{ coursemac(["GEL 56", "GEL 298"], "Spring 2020")}}
+  {{ coursemac(["GEL 160", "STS 101"], "Fall 2019")}}
+</section>
+
 <section id="member" class="container">
   <h2>Current Team</h2>
   <ul class="members">
-    {{ member("Jason Moore", "jason.jpg", "Assistant Professor of Teaching") }}
-    {{ member("Richard Feltstykket", "richard.jpg", "Systems Administrator") }}
-    {{ member("Noah Sanders", "noah.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Delmar Larsen", "delmar.jpg", "Director") }}
+    {{ member("John Rundle", "john_rundle.png", "Distinguished Professor<br/>Faculty Champion") }}
+    {{ member("Richard Feltstykket", "richard.jpg", "Mentor") }}
     {{ member("Tim Stewart", "tim.png", "Site Reliability Engineering Assistant") }}
-    {{ member("Mandeepika Saini", "mandeepika.jpg", "Site Reliability Engineering Assistant") }}
-    {{ member("Patrick Mackle", "patrick.jpg", "Site Reliability Engineering Assistant") }}
     {{ member("Ryan Uyeki", "ryan.jpg", "Site Reliability Engineering Assistant") }}
   </ul>
 
   <h2>Past Team Members</h2>
   <ul class="members">
+    {{ member("Jason Moore", "jason.jpg", "Assistant Professor of Teaching") }}
+    {{ member("Noah Sanders", "noah.png", "Site Reliability Engineering Assistant") }}
+    {{ member("Mandeepika Saini", "mandeepika.jpg", "Site Reliability Engineering Assistant") }}
+    {{ member("Patrick Mackle", "patrick.jpg", "Site Reliability Engineering Assistant") }}
     {{ member("Kevin Rong", "kevin2.png", "Site Reliability Engineering Assistant") }}
     {{ member("Celine Liang", "celine.png", "Site Reliability Engineering Assistant") }}
     {{ member("Hao Huang", "hao.jpg", "Site Reliability Engineering Assistant") }}
