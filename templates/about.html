@@ -9,7 +9,10 @@
   </div>
   <div class="member-description">
     <div class="title">{{ name }}</div>
-    <div class="subtitle">{% for line in title %}<br />{{ line }}{% endfor %}</div>
+    {# we disable autoescape to allow rendering of line breaks #}
+    {% autoescape false %}
+    <div class="subtitle">{{ title }}</div>
+    {% endautoescape %}
   </div>
 </li>
 {% endmacro %}
@@ -49,7 +52,7 @@
   <h2>Current Team</h2>
   <ul class="members">
     {{ member("Delmar Larsen", "delmar.jpg", "Director") }}
-    {{ member("John Rundle", "john_rundle.png", "Distinguished Professor\nFaculty Champion") }}
+    {{ member("John Rundle", "john_rundle.png", "Distinguished Professor<br/>Faculty Champion") }}
     {{ member("Richard Feltstykket", "richard.jpg", "Mentor") }}
     {{ member("Tim Stewart", "tim.png", "Site Reliability Engineering Assistant") }}
     {{ member("Ryan Uyeki", "ryan.jpg", "Site Reliability Engineering Assistant") }}
